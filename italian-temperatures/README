@@ -1,0 +1,4 @@
+1) python3 download_temp.py
+2) rm Milano/2019/Agosto.csv and Settembre.csv
+3) python3 process_and_concatenate.py
+4) python3 process_national_data.py
