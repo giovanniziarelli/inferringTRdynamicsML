@@ -34,16 +34,20 @@ class ClipConstraint(tf.keras.constraints.Constraint):
     def __call__(self, w):
         return tf.clip_by_value(w, self.min_value, self.max_value)
 #%% Set some hyperparameters
-dt = 0.2
+
+trial = 10 # defining observation width 
+trial_sim = 4 
+
+dt = 1
 t_max = 12
-b_ref = 0.25#0.5#0.025#0.7#0.77#0.1672#0.92851
+b_ref = 0.25 #0.5#0.025#0.7#0.77#0.1672#0.92851
 tau = 0
-layers = 2
+layers = 1
+variance_init = 0.0001
 err = 1e-1#1e-1
-trial = 10 
 
 T_obs_vec = [29, 36, 43, 50, 57, 64, 71, 78, 85, 92]
-T_obs = T_obs_vec[trial-1]#71#57#99 
+T_obs = T_obs_vec[trial-1] #71#57#99 
 
 #%% Model parameters
 alpha = 1 / 1.5#5#1.5
@@ -60,10 +64,9 @@ neurons = 4
 T_fin = 196#70
 N_weeks = 28 
 dt_base = 1#T_fin 
-trial_sim = 4 
 
 # Creating saving folders
-folder = '/home/giovanni/Desktop/LDNets/pp2_neurons_' + str(neurons) + '_' + str(T_fin) + '_lay' + str(layers) + '_umidity_Tobs_' + str(T_obs)+ '_trialsim'+ str(trial_sim)+ '/'
+folder = '/home/giovanni/Desktop/LDNets/TestCase_epi_real_temperature_humidity_neurons_' + str(neurons) + '_hlayers_' + str(layers) + '_observation__width_' + str(T_obs)+ '_random_init_'+ str(trial_sim)+ '/'
 
 if os.path.exists(folder) == False:
     os.mkdir(folder)
@@ -99,12 +102,8 @@ normalization = {
         'time_constant' : dt_base
     },
     'input_signals': {
-        'T': {'min': 5, 'max' : 17},#{ 'min': 0, 'max': 4}
-        #'T': {'min': 0, 'max' : 20},#{ 'min': 0, 'max': 4}
-        'U': {'min': 60, 'max' : 85}#{ 'min': 0, 'max': 4}
-        #'U': {'min': 50, 'max' : 100}#{ 'min': 0, 'max': 4}
-        #'T': {'min': 1, 'max' : 3},#{ 'min': 0, 'max': 4}
-        #'U': {'min': 4, 'max' : 4.5}#{ 'min': 0, 'max': 4}
+        'T': {'min': 5, 'max' : 17},
+        'U': {'min': 60, 'max' : 85}
     },
     'output_fields': {
         'S': { 'min': 0, "max": 1 },
@@ -114,9 +113,7 @@ normalization = {
 }
 
 #%% Dataset parameters
-n_size = input_dataset_extern_temp.shape[0]#6
-T_mean = 16
-dt = 1
+n_size = input_dataset_extern_temp.shape[0]
 
 length_period = 7
 W_obs = int(T_obs / length_period)
@@ -126,8 +123,8 @@ t = np.arange(0, T_fin+dt, dt)[None,:]
 dt_num = 0.5#0.1#0.05#0.2
 t_num = np.arange(0, T_fin+dt_num, dt_num)[None, :]
 
-training_var_numpy_orig = np.stack((input_dataset_extern_temp, input_dataset_extern_umid), axis = 2) #T_cos(T_mean, f, A, t)
-undetection_mean_value  = 0.23
+training_var_numpy_orig = np.stack((input_dataset_extern_temp, input_dataset_extern_umid), axis = 2)
+undetection_mean_value  = 0.23 # for influenza, derived from Trentini et al.
 cases                   = output_dataset_extern / undetection_mean_value
 
 def epiModel_rhs(state, beta): # state dim (samples, 3), beta dim (samples,1)
@@ -137,9 +134,6 @@ def epiModel_rhs(state, beta): # state dim (samples, 3), beta dim (samples,1)
     dIdt = alpha * tf.expand_dims(state[:,1],axis=1) - gamma* tf.expand_dims(state[:,2],axis=1)
 
     return tf.concat([dSdt, dEdt, dIdt], axis = 1)
-
-beta_guess = b_ref 
-beta_guess_IC = b_ref * np.ones((n_size,1))
 
 # Filtering input coeffiecients
 def savgol_coeffs(window_length, polyorder):
@@ -187,7 +181,9 @@ def weekly_avg(T):
     T_reshaped = np.reshape(T[:,:-1], (T.shape[0], T.shape[1]//7, 7))
     return np.mean(T_reshaped, axis = 2)
 
-print(training_var_numpy_orig.shape)
+beta_guess = b_ref 
+beta_guess_IC = b_ref * np.ones((n_size,1))
+
 # Deleting possible Nan values
 mask = np.isnan(training_var_numpy_orig)
 indexes = []
@@ -195,26 +191,17 @@ for ii in range(mask.shape[0]):
     if mask[ii].any() == True:
         indexes.append(ii)
         continue
-#training_var_numpy = weekly_avg(training_var_numpy)
+
 training_var_numpy_orig[:,:,0] = smoothing(training_var_numpy_orig[:,:,0])
 training_var_numpy_orig[:,:,1] = smoothing(training_var_numpy_orig[:,:,1])
-print(training_var_numpy_orig.shape)
-print(cases.shape)
-#cases = smoothing_cases(cases)
 training_var_numpy_orig = np.delete(training_var_numpy_orig, indexes, 0)
-print(training_var_numpy_orig.shape)
-#training_var_numpy = np.delete(smoothing(training_var_numpy), indexes, 0)
+
 training_var_numpy = np.zeros((training_var_numpy_orig.shape[0], t_num.shape[1], training_var_numpy_orig.shape[2]))
 training_var_numpy[:,:,0] = np.array([np.interp(t_num.squeeze(), t.squeeze(), training_var_numpy_orig[k,:,0]) for k in range(n_size - len(indexes))])
 training_var_numpy[:,:,1] = np.array([np.interp(t_num.squeeze(), t.squeeze(), training_var_numpy_orig[k,:,1]) for k in range(n_size - len(indexes))])
-print(t_num.shape)
-print(t.shape)
-print(training_var_numpy.shape)
-#training_var_numpy = np.array([np.interp(t_num[0,:-1].squeeze(), t[0,:-1].squeeze(), training_var_numpy[k,:]) for k in range(n_size - len(indexes))])
+
 cases = np.delete(cases, indexes, 0)
 n_size = n_size - len(indexes)
-
-print(np.min(training_var_numpy, axis = 1), np.max(cases, axis = 1))
 
 plot_temps = 1
 if plot_temps:
@@ -265,56 +252,16 @@ if plot_temps:
     plt.close()
 
 
-#   plt.plot(training_var_numpy[0,:,0])
-#   plt.plot(training_var_numpy[1,:,0])
-#   plt.plot(training_var_numpy[2,:,0])
-#   plt.plot(training_var_numpy[3,:,0])
-#   plt.plot(training_var_numpy[4,:,0])
-#   plt.plot(training_var_numpy[5,:,0])
-#   plt.plot(training_var_numpy[6,:,0])
-#   plt.plot(training_var_numpy[7,:,0])
-#   plt.show()
-
-#   plt.plot(training_var_numpy[0,:,1])
-#   plt.plot(training_var_numpy[1,:,1])
-#   plt.plot(training_var_numpy[2,:,1])
-#   plt.plot(training_var_numpy[3,:,1])
-#   plt.plot(training_var_numpy[4,:,1])
-#   plt.plot(training_var_numpy[5,:,1])
-#   plt.plot(training_var_numpy[6,:,1])
-#   plt.plot(training_var_numpy[7,:,1])
-#   plt.show()
-
-#   plt.plot(cases[0,:])
-#   plt.plot(cases[1,:])
-#   plt.plot(cases[2,:])
-#   plt.plot(cases[3,:])
-#   plt.plot(cases[4,:])
-#   plt.plot(cases[5,:])
-#   plt.plot(cases[6,:])
-#   plt.plot(cases[7,:])
-#   plt.show()
-
-#   plt.hist(cases.flatten())
-#   plt.close()
-
-# Defining Datasets
-
 # dividing training and testing set
 num_train = 9
-print('SHAPESSSS')
-print(cases.shape)
-print(training_var_numpy.shape)
 
 #np.random.seed(8)# 2014/15 leave one out
 np.random.seed(2)# 2018/19 leave one out
 #np.random.seed(4)# 2017/28 leave one out
+
 shuffle_indexes = np.arange(training_var_numpy.shape[0])
 np.random.shuffle(shuffle_indexes)
-#print(np.random.shuffle(ind))# shuffle_indexes)
-print(shuffle_indexes)
 
-#if shuffling
 training_var_numpy = training_var_numpy[shuffle_indexes]
 cases = cases[shuffle_indexes]
 dataset_train = {
@@ -340,30 +287,25 @@ dataset_testg_full = {
         'frac' : int(dt/dt_num)
 }
 dataset_testg = utils.cut_dataset_epi_real(dataset_testg_full, T_obs)
-# For reproducibility (delete if you want to test other random initializations)
+
 tf.random.set_seed(0)
 # We re-sample the time transients with timestep dt and we rescale each variable between -1 and 1.
 utils.process_dataset_epi_real(dataset_train, problem, normalization, dt = None, num_points_subsample = None)
 utils.process_dataset_epi_real(dataset_testg, problem, normalization, dt = None, num_points_subsample = None)
 utils.process_dataset_epi_real(dataset_testg_full, problem, normalization, dt = None, num_points_subsample = None)
-print(dataset_testg)
-print('END')
+
 #%% Define model
 constraint_IC = ClipConstraint(0, 1)
-# dynamics network
+
 # Initial conditions
 InitialValue_train = np.zeros((dataset_train['num_samples'], 1))
 InitialValue_testg = np.zeros((dataset_testg['num_samples'], 1))
-InitialValue_train[:,0] = 10/1000000# * np.ones_like(cases[:,0])#cases[:,0]#10/50000000#0.01
-InitialValue_testg[:,0] = 10/1000000# * np.ones_like(cases[:,0])#cases[:,0]#10 / 50000000
+InitialValue_train[:,0] = 10/1000000 # initial seed
+InitialValue_testg[:,0] = 10/1000000 # initial seed
 IC_train = tf.Variable(InitialValue_train, trainable=False, constraint = constraint_IC)
 IC_testg = tf.Variable(InitialValue_testg, trainable=False, constraint = constraint_IC)
-print('IC testg')
-tf.print(IC_testg)
-tf.print(dataset_train['target_cases'])
-tf.print(dataset_testg['target_cases'])
+
 initial_lat_state_train = tf.Variable(np.ones((dataset_train['num_samples'],1)) * beta_guess, trainable=True)
-#print(dataset_train)
 initial_lat_state_testg = tf.Variable(np.ones((dataset_testg['num_samples'],1)) * beta_guess, trainable=True)
 
 if num_latent_params > 0:
@@ -378,16 +320,13 @@ if num_latent_params > 0:
 else:
     input_shape = (num_latent_states + len(problem['input_parameters']) + len(problem['input_signals']),)
 
-NNdyn = tf.keras.Sequential([
-            tf.keras.layers.Dense(neurons, activation = tf.nn.tanh, input_shape = input_shape, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=0.0001)),
-            tf.keras.layers.Dense(neurons, activation = tf.nn.tanh, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=0.0001)),
-            #tf.keras.layers.Dense(int(neurons/2), activation = tf.nn.tanh, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=0.0001)),
-            #tf.keras.layers.Dense(neurons, activation = tf.nn.tanh, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=0.01)),
-            #tf.keras.layers.Dense(neurons, activation = tf.nn.tanh, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=0.01)),
-            #tf.keras.layers.Dense(neurons, activation = tf.nn.tanh, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=0.1)),
-            #tf.keras.layers.Dense(neurons, activation = tf.nn.tanh, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=0.1)),
-            tf.keras.layers.Dense(num_latent_states, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=0.0001)),
-        ])
+# Defining the neural network model
+NNdyn = tf.keras.Sequential()
+NNdyn.add(tf.keras.layers.Dense(num_latent_states, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=variance_init)))
+for _ in range(layers - 1):
+    NNdyn.add(tf.keras.layers.Dense(neurons, activation=tf.nn.tanh, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=variance_init)))
+
+NNdyn.add(tf.keras.layers.Dense(num_latent_states, kernel_initializer=tf.keras.initializers.RandomNormal(stddev=variance_init)))
 NNdyn.summary()
 
 
@@ -433,64 +372,27 @@ def LDNet(dataset, initial_lat_state, lat_param, IC):
 
 #%% Loss function
 
-def loss_exp(dataset, initial_lat_state, lat_param, IC):
-    state = LDNet(dataset, initial_lat_state, lat_param, IC)
-    #E = tf.transpose(state[:,::dataset['frac'] * 7,1])
+def loss_exp_beta(dataset, lat_states, IC):
+    state = evolve_model(dataset, lat_states, IC)
     E = state[:,::dataset['frac'] * length_period ,1]#frac * 7
     S = state[:,::dataset['frac'] * length_period ,0]#frac * 7
-    #new_cases_summed_weekly = tf.transpose(tf.convert_to_tensor([tf.reduce_sum(alpha * E[length_period*k:length_period*(k+1),:], axis = 0) for k in range(dataset['weeks'])]))
-    #MSE = tf.reduce_mean(tf.square(new_cases_summed_weekly - dataset['target_cases']) / tf.square( tf.square( dataset['target_cases']) + 1e-6 )) 
-    C = 10#80 
-    MSE = tf.reduce_mean(tf.square(C * (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:]) - C * dataset['target_cases']))# / tf.square( (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:])+ 1e-6 )) 
-    
-    #MSE = tf.reduce_mean(tf.square(100 * (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:]) - 100 * dataset['target_cases']) / tf.square( 100 * dataset['target_cases'] )) 
+    C = 100
+    MSE = tf.reduce_mean(tf.square(C * (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:]) - C * dataset['target_cases']) / tf.square(C * dataset['target_cases'] )) 
     return MSE
 
 def loss_exp_beta_abs(dataset, lat_states, IC):
     state = evolve_model(dataset, lat_states, IC)
-    #E = tf.transpose(state[:,::dataset['frac'] * 7,1])
     E = state[:,::dataset['frac'] * length_period ,1]#frac * 7
     S = state[:,::dataset['frac'] * length_period ,0]#frac * 7
-    #new_cases_summed_weekly = tf.transpose(tf.convert_to_tensor([tf.reduce_sum(alpha * E[length_period*k:length_period*(k+1),:], axis = 0) for k in range(dataset['weeks'])]))
-    #MSE = tf.reduce_mean(tf.square(new_cases_summed_weekly - dataset['target_cases']) / tf.square( tf.square( dataset['target_cases']) + 1e-6 )) 
-    
-    MSE = tf.reduce_mean(tf.square(10000 * (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:]) - 10000 * dataset['target_cases']))# / tf.square( 100 * dataset['target_cases'] )) 
-    
-    #MSE = tf.reduce_mean(tf.square(100 * (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:]) - 100 * dataset['target_cases']) / tf.square( 100 * dataset['target_cases'] )) 
+    C = 10000
+    MSE = tf.reduce_mean(tf.square(C * (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:]) - C * dataset['target_cases'])) 
     return MSE
 
 def loss_s_inf(dataset, lat_states, IC):
     state = evolve_model(dataset, lat_states, IC)
-    err   = tf.reduce_mean(tf.maximum(tf.pow(10 * (0.7 - state[:,-1,0]), 5), tf.zeros_like(state[:,-1,0]))) 
-    
-    #MSE = tf.reduce_mean(tf.square(100 * (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:]) - 100 * dataset['target_cases']) / tf.square( 100 * dataset['target_cases'] )) 
+    C = 10
+    err   = tf.reduce_mean(tf.maximum(tf.pow(C * (0.7 - state[:,-1,0]), 5), tf.zeros_like(state[:,-1,0]))) 
     return err
-
-def loss_s_inf_testg(dataset, lat_states, IC):
-    state = evolve_model(dataset, lat_states, IC)
-    err   = tf.reduce_mean(tf.maximum(tf.pow(10 * (0.85 - state[:,-1,0]), 5), tf.zeros_like(state[:,-1,0]))) 
-    
-    #MSE = tf.reduce_mean(tf.square(100 * (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:]) - 100 * dataset['target_cases']) / tf.square( 100 * dataset['target_cases'] )) 
-    return err
-
-def loss_exp_beta(dataset, lat_states, IC):
-    state = evolve_model(dataset, lat_states, IC)
-    #E = tf.transpose(state[:,::dataset['frac'] * 7,1])
-    E = state[:,::dataset['frac'] * length_period ,1]#frac * 7
-    S = state[:,::dataset['frac'] * length_period ,0]#frac * 7
-    #new_cases_summed_weekly = tf.transpose(tf.convert_to_tensor([tf.reduce_sum(alpha * E[length_period*k:length_period*(k+1),:], axis = 0) for k in range(dataset['weeks'])]))
-    #MSE = tf.reduce_mean(tf.square(new_cases_summed_weekly - dataset['target_cases']) / tf.square( tf.square( dataset['target_cases']) + 1e-6 )) 
-    
-    MSE = tf.reduce_mean(tf.square(100 * (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:]) - 100 * dataset['target_cases']) / tf.square( 100 * dataset['target_cases'] )) 
-    
-    #MSE = tf.reduce_mean(tf.square(100 * (S[:,:-1] + E[:,:-1] - S[:,1:] - E[:,1:]) - 100 * dataset['target_cases']) / tf.square( 100 * dataset['target_cases'] )) 
-    return MSE
-
-def val_exp(dataset, initial_lat_state, lat_param, IC):
-    state = LDNet(dataset, initial_lat_state, lat_param, IC)
-    E = tf.transpose(state[:,::dataset['frac'],1])
-    new_cases_summed_weekly = tf.convert_to_tensor([tf.reduce_sum(alpha * E[length_period*k:length_period*(k+1),:], axis = 0) for k in range(dataset['weeks'])])
-    return tf.reduce_mean(tf.square((new_cases_summed_weekly) - (tf.transpose(dataset['target_cases']))))
 
 def loss_H1(dataset, initial_lat_state, lat_param, IC):
     state = LDNet(dataset, initial_lat_state, lat_param, IC)
@@ -507,6 +409,12 @@ def loss_H1(dataset, initial_lat_state, lat_param, IC):
     
     MSE = nu_h1 * tf.reduce_mean(rhs) 
     return MSE
+
+def val_exp(dataset, initial_lat_state, lat_param, IC):
+    state = LDNet(dataset, initial_lat_state, lat_param, IC)
+    E = tf.transpose(state[:,::dataset['frac'],1])
+    new_cases_summed_weekly = tf.convert_to_tensor([tf.reduce_sum(alpha * E[length_period*k:length_period*(k+1),:], axis = 0) for k in range(dataset['weeks'])])
+    return tf.reduce_mean(tf.square((new_cases_summed_weekly) - (tf.transpose(dataset['target_cases']))))
 
 #%% Loss weights
 nu = 5e-1#1.5e-2#3e-1#1.8e-1#1e-1#i1e0 good 1e0#1e-7#1e-2#-4#1e0#1e2
@@ -529,82 +437,37 @@ def weights_reg(NN):
     return sum([tf.reduce_mean(tf.square(lay.kernel)) for lay in NN.layers])/len(NN.layers)
 
 loss = loss_exp
+n_fact = int(dt/dt_num)
 
 def loss_train():
     beta = evolve_dynamics(dataset_train, initial_lat_state_train, lat_param_train)
-    beta_coarse = beta[:,1::2*7,:]
+    beta_coarse = beta[:,1::n_fact*7,:]
     l = nu *loss_exp_beta(dataset_train, beta, IC_train)\
             + alpha_reg * weights_reg(NNdyn)\
             + nu_r1 * tf.reduce_mean(tf.square(lat_param_train -1))\
-            + nu_p * tf.reduce_mean(tf.maximum(tf.pow(10 * (beta - 1), 5), tf.zeros_like(beta)))\
+            + nu_p * tf.reduce_mean(tf.maximum(tf.pow(10 * (beta - 1.5), 5), tf.zeros_like(beta)))\
             + nu_p2 * tf.reduce_mean(tf.square((initial_lat_state_train - beta[:,1,:]) / dt_num))\
             + nu_s_inf * loss_s_inf(dataset_train, beta, IC_train)\
-            + nu_p3 * tf.reduce_mean(tf.reduce_max(tf.square((beta_coarse[:,1:] - beta_coarse[:,:-1])/(dt_num*2*7 )), axis = 1))
+            + nu_p3 * tf.reduce_mean(tf.reduce_max(tf.square((beta_coarse[:,1:] - beta_coarse[:,:-1])/(dt_num*n_fact*7 )), axis = 1))
     return l 
 
 def loss_train_mse2():
     beta = evolve_dynamics(dataset_train, initial_lat_state_train, lat_param_train)
-    beta_coarse = beta[:,1::2*7,:]
+    beta_coarse = beta[:,1::n_fact*7,:]
     l = nu *loss_exp_beta_abs(dataset_train, beta, IC_train)\
             + alpha_reg * weights_reg(NNdyn)\
             + nu_r1 * tf.reduce_mean(tf.square(lat_param_train-1))\
             + nu_p * tf.reduce_mean(tf.maximum(tf.pow((beta - 1), 5), tf.zeros_like(beta)))\
             + nu_p2 * tf.reduce_mean(tf.square((initial_lat_state_train - beta[:,1,:]) / dt_num))\
             + nu_s_inf * loss_s_inf(dataset_train, beta, IC_train)\
-            + nu_p3 * tf.reduce_mean(tf.reduce_max(tf.square((beta_coarse[:,1:] - beta_coarse[:,:-1])/(dt_num*2*7 )), axis = 1))
-            #+ nu_p3 * tf.reduce_mean(tf.square((beta_coarse[:,1:] - beta_coarse[:,:-1])/(dt_num)))
+            + nu_p3 * tf.reduce_mean(tf.reduce_max(tf.square((beta_coarse[:,1:] - beta_coarse[:,:-1])/(dt_num*n_fact*7 )), axis = 1))
     return l 
-####nu = 1.1e-2#3e-1#1.8e-1#1e-1#i1e0 good 1e0#1e-7#1e-2#-4#1e0#1e2
-####nu_h1 = 0#1e-1 
-####nu_r1  = 1.4e-3#e-5
-####nu_p = 5e-2#1e-2#6
-####nu_p2 = 5e-2#1e-3#6
-####alpha_reg = 1e-3#1e-3#1e#1e-5#1e-2#1e-2#1e-1# 1e-8#1e-8#1e1#1e-2#1e-3#5e-5#5e-5#5e-6#4.7e-3
-####alpha_reg_IC = 0#1e-8#1e-4#1e-3
-#####%% Training
-####trainable_variables_train = NNdyn.variables + [initial_lat_state_train] 
-####if num_latent_params > 0:
-####    trainable_variables_train += [lat_param_train]
-####if estim_IC > 0:
-####    trainable_variables_train += [IC_train]
-
-####def weights_reg(NN):
-####    return sum([tf.reduce_mean(tf.square(lay.kernel)) for lay in NN.layers])/len(NN.layers)
-
-####loss = loss_exp
-
-####def loss_train():
-####    beta = evolve_dynamics(dataset_train, initial_lat_state_train, lat_param_train)
-####    l = nu *loss_exp_beta(dataset_train, beta, IC_train)\
-####            + alpha_reg * weights_reg(NNdyn)\
-####            + nu_r1 * tf.reduce_mean(tf.square(lat_param_train -1))\
-####            + nu_p * tf.reduce_mean(tf.maximum(tf.pow(beta - 1, 5), tf.zeros_like(beta)))\
-####            + nu_p2 * tf.reduce_mean(tf.square((initial_lat_state_train - beta[:,1,:]) / dt_num))
-####    return l 
-
-####def loss_train_mse2():
-####    beta = evolve_dynamics(dataset_train, initial_lat_state_train, lat_param_train)
-####    l = nu *loss_exp_beta_abs(dataset_train, beta, IC_train)\
-####            + alpha_reg * weights_reg(NNdyn)\
-####            + nu_r1 * tf.reduce_mean(tf.square(lat_param_train -1))\
-####            + nu_p * tf.reduce_mean(tf.maximum(tf.pow(beta - 1, 5), tf.zeros_like(beta)))\
-####            + nu_p2 * tf.reduce_mean(tf.square((initial_lat_state_train - beta[:,1,:]) / dt_num))
-####    return l 
 
 def val_train():
     beta = evolve_dynamics(dataset_train, initial_lat_state_train, lat_param_train)
     l = loss_exp_beta(dataset_train, beta, IC_train)
     return l 
 
-##loss_train = lambda: nu * loss(dataset_train, initial_lat_state_train, lat_param_train, IC_train)\
-##        + alpha_reg * weights_reg(NNdyn)\
-##        + nu_r1 * tf.reduce_mean(tf.square(lat_param_train - 1))\
-        #+ nu_p * tf.reduce_mean(tf.reduce_sum(tf.square(evolve_dynamics(dataset_train, initial_lat_state_train, lat_param_train) -0.6), axis = 0))\
-##        + nu_p * tf.maximum(tf.reduce_sum(tf.square(evolve_dynamics(dataset_train, initial_lat_state_train, lat_param_train) -0.6), axis = 0))\
-##        + nu_p2 * tf.reduce_mean(tf.square((initial_lat_state_train - evolve_dynamics(dataset_train, initial_lat_state_train, lat_param_train)[:,1,:]) / dt_num))
-
-#val_train = lambda: val_exp(dataset_train, initial_lat_state_train, lat_param_train, IC_train)         
-         
 val_metric = val_train
 
 opt_train = optimization.OptimizationProblem(trainable_variables_train, loss_train, val_metric)
@@ -613,7 +476,7 @@ num_epochs_Adam_train = 1000#500 good
 num_epochs_BFGS_train = 5000
 
 print('training (Adam)...')
-opt_train.optimize_keras(num_epochs_Adam_train, tf.keras.optimizers.Adam(learning_rate=5e-3))#1e-3))#1e-2 good
+opt_train.optimize_keras(num_epochs_Adam_train, tf.keras.optimizers.Adam(learning_rate=5e-3))
 print('training (BFGS)...')
 opt_train.optimize_BFGS(num_epochs_BFGS_train)
 
@@ -668,7 +531,7 @@ if num_latent_params>0:
         l = nu_loss_testg *loss_exp_beta(dataset_testg, beta, IC_testg)\
                 + nu_r2 * tf.reduce_mean(tf.transpose(lat_param_testg - latent_train_mean ) * C_post * (lat_param_testg - latent_train_mean))\
                 + nu_b0 * tf.reduce_mean(tf.transpose(initial_lat_state_testg - initial_lat_state_train_mean) * C_post_b0 * (initial_lat_state_testg - initial_lat_state_train_mean))\
-                + 0*nu_s_inf * loss_s_inf_testg(dataset_testg, beta, IC_testg)\
+                + nu_s_inf * loss_s_inf_testg(dataset_testg, beta, IC_testg)\
                 + nu_p * tf.reduce_mean(tf.maximum(tf.pow(beta - 1, 5), tf.zeros_like(beta)))\
                 + nu_p2 * tf.reduce_mean(tf.square((initial_lat_state_testg - beta[:,1,:]) / dt_num))
         return l 
@@ -677,7 +540,7 @@ if num_latent_params>0:
         l = nu_loss_testg *loss_exp_beta_abs(dataset_testg, beta, IC_testg)\
                 + nu_r2 * tf.reduce_mean(tf.transpose(lat_param_testg - latent_train_mean ) * C_post * (lat_param_testg - latent_train_mean))\
                 + nu_b0 * tf.reduce_mean(tf.transpose(initial_lat_state_testg - initial_lat_state_train_mean) * C_post_b0 * (initial_lat_state_testg - initial_lat_state_train_mean))\
-                + 0*nu_s_inf * loss_s_inf_testg(dataset_testg, beta, IC_testg)\
+                + nu_s_inf * loss_s_inf_testg(dataset_testg, beta, IC_testg)\
                 + nu_p * tf.reduce_mean(tf.maximum(tf.pow(beta - 1, 5), tf.zeros_like(beta)))\
                 + nu_p2 * tf.reduce_mean(tf.square((initial_lat_state_testg - beta[:,1,:]) / dt_num))
         return l 
