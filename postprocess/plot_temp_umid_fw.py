@@ -79,24 +79,18 @@ for k in range(temps_A.shape[0]):
 #ax[0].set_title('Infected') 
 ax[0].set_ylabel(r'Detected infected')
 ax[0].set_xlabel(r'days')
-#ax[1].set_title('Transmission Rate') 
 ax[1].set_ylabel(r'Transmission rate')
 ax[1].set_xlabel('days')
-#ax[2].set_title('Temperature')
 ax[2].set_ylabel(r'Temperature [°C]')
-#ax[2].set_ylabel(r'Relative Umidity [\%]')
 ax[2].set_xlabel('days')
-zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  # Riquadro di zoom in alto a destra
-zoom_ax.set_xlim([54, 59])  # Limiti per lo zoom sull'asse x (modifica a seconda del tuo intervallo)
-zoom_ax.set_ylim([0.029, 0.0315])  # Limiti per lo zoom sull'asse y (modifica a seconda del tuo intervallo)
+
+zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  
+zoom_ax.set_xlim([54, 59])  
+zoom_ax.set_ylim([0.029, 0.0315]) 
 zoom_ax.tick_params(axis='both', which='major', labelsize=7)
-# Loop per plottare i dati anche nel riquadro di zoom
+
 for k in range(temps_A.shape[0]):
     zoom_ax.plot(t, I_temp_A[k, :], '-', linewidth=2, color=cmap(k))
-
-# Rimuovere etichette nel riquadro di zoom
-#zoom_ax.set_xticks([])
-#zoom_ax.set_yticks([])
 
 fig.tight_layout()
 plt.savefig(output_folder + 'prova_test_temp_amplitude.pdf')
@@ -108,28 +102,23 @@ for k in range(temps_f.shape[0]):
     ax[1].plot(t, beta_temp_f[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
     ax[2].plot(t_num, temps_f[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
 
-#ax[0].set_title('Infected') 
 ax[0].set_ylabel(r'Detected infected')
 ax[0].set_xlabel(r'days')
-#ax[1].set_title('Transmission Rate') 
 ax[1].set_ylabel(r'Transmission rate')
 ax[1].set_xlabel('days')
-#ax[2].set_title('Temperature')
 ax[2].set_ylabel(r'Temperature [°C]')
-#ax[2].set_ylabel(r'Relative Umidity [\%]')
 ax[2].set_xlabel('days')
-zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  # Riquadro di zoom in alto a destra
-zoom_ax.set_xlim([49, 63])  # Limiti per lo zoom sull'asse x (modifica a seconda del tuo intervallo)
-zoom_ax.set_ylim([0.020, 0.0315])  # Limiti per lo zoom sull'asse y (modifica a seconda del tuo intervallo)
+
+zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right") 
+zoom_ax.set_xlim([49, 63]) 
+zoom_ax.set_ylim([0.020, 0.0315])  
 zoom_ax.tick_params(axis='both', which='major', labelsize=7)
-# Loop per plottare i dati anche nel riquadro di zoom
+
 for k in range(temps_A.shape[0]):
     zoom_ax.plot(t, I_temp_f[k, :], '-', linewidth=2, color=cmap(k))
 
-
 fig.tight_layout()
 plt.savefig(output_folder + 'prova_test_temp_frequency.pdf')
-#plt.show()
 
 fig,ax = plt.subplots(1,3, figsize=(5*width_in_inches, 1.5*height_in_inches), dpi=dpi)
 for k in range(temps_phi.shape[0]):
@@ -137,21 +126,18 @@ for k in range(temps_phi.shape[0]):
     ax[1].plot(t, beta_temp_phi[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
     ax[2].plot(t_num, temps_phi[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
 
-#ax[0].set_title('Infected') 
 ax[0].set_ylabel(r'Detected infected')
 ax[0].set_xlabel(r'days')
-#ax[1].set_title('Transmission Rate') 
 ax[1].set_ylabel(r'Transmission rate')
 ax[1].set_xlabel('days')
-#ax[2].set_title('Temperature')
 ax[2].set_ylabel(r'Temperature [°C]')
-#ax[2].set_ylabel(r'Relative Umidity [\%]')
 ax[2].set_xlabel('days')
-zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  # Riquadro di zoom in alto a destra
-zoom_ax.set_xlim([53, 59])  # Limiti per lo zoom sull'asse x (modifica a seconda del tuo intervallo)
-zoom_ax.set_ylim([0.029, 0.032])  # Limiti per lo zoom sull'asse y (modifica a seconda del tuo intervallo)
+
+zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  
+zoom_ax.set_xlim([53, 59]) 
+zoom_ax.set_ylim([0.029, 0.032])  
 zoom_ax.tick_params(axis='both', which='major', labelsize=7)
-# Loop per plottare i dati anche nel riquadro di zoom
+
 for k in range(temps_A.shape[0]):
     zoom_ax.plot(t, I_temp_phi[k, :], '-', linewidth=2, color=cmap(k))
 
@@ -165,27 +151,23 @@ for k in range(temps_Tm.shape[0]):
     ax[1].plot(t, beta_temp_Tm[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
     ax[2].plot(t_num, temps_Tm[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
 
-#ax[0].set_title('Infected') 
 ax[0].set_ylabel(r'Detected infected')
 ax[0].set_xlabel(r'days')
-#ax[1].set_title('Transmission Rate') 
 ax[1].set_ylabel(r'Transmission rate')
 ax[1].set_xlabel('days')
-#ax[2].set_title('Temperature')
 ax[2].set_ylabel(r'Temperature [°C]')
-#ax[2].set_ylabel(r'Relative Umidity [\%]')
 ax[2].set_xlabel('days')
-zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  # Riquadro di zoom in alto a destra
-zoom_ax.set_xlim([50, 65])  # Limiti per lo zoom sull'asse x (modifica a seconda del tuo intervallo)
-zoom_ax.set_ylim([0.022, 0.032])  # Limiti per lo zoom sull'asse y (modifica a seconda del tuo intervallo)
+
+zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  
+zoom_ax.set_xlim([50, 65]) 
+zoom_ax.set_ylim([0.022, 0.032])  
 zoom_ax.tick_params(axis='both', which='major', labelsize=7)
-# Loop per plottare i dati anche nel riquadro di zoom
+
 for k in range(temps_A.shape[0]):
     zoom_ax.plot(t, I_temp_Tm[k, :], '-', linewidth=2, color=cmap(k))
 
 fig.tight_layout()
 plt.savefig(output_folder + 'prova_test_temp_Tmean.pdf')
-#plt.show()
 
 colors = ["goldenrod", "forestgreen"]
 cmap = LinearSegmentedColormap.from_list("goldenrod_forestgreen", colors, N=temps_A.shape[0])
@@ -195,27 +177,25 @@ for k in range(umids.shape[0]):
     ax[1].plot(t, beta_umid[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
     ax[2].plot(t_num, umids[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
 
-#ax[0].set_title('Infected') 
 ax[0].set_ylabel(r'Detected infected')
 ax[0].set_xlabel(r'days')
-#ax[1].set_title('Transmission Rate') 
 ax[1].set_ylabel(r'Transmission rate')
 ax[1].set_xlabel('days')
-#ax[2].set_title('Temperature')
-#ax[2].set_ylabel(r'Temperature [°C]')
 ax[2].set_ylabel(r'Relative Umidity [\%]')
 ax[2].set_xlabel('days')
-zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  # Riquadro di zoom in alto a destra
-zoom_ax.set_xlim([50, 62])  # Limiti per lo zoom sull'asse x (modifica a seconda del tuo intervallo)
-zoom_ax.set_ylim([0.022, 0.032])  # Limiti per lo zoom sull'asse y (modifica a seconda del tuo intervallo)
+
+zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  
+zoom_ax.set_xlim([50, 62]) 
+zoom_ax.set_ylim([0.022, 0.032])  
 zoom_ax.tick_params(axis='both', which='major', labelsize=7)
-# Loop per plottare i dati anche nel riquadro di zoom
+
 for k in range(temps_A.shape[0]):
     zoom_ax.plot(t, I_umid[k, :], '-', linewidth=2, color=cmap(k))
 
 fig.tight_layout()
 plt.savefig(output_folder + 'prova_test_temp_umid.pdf')
 #plt.show()
+
 colors = ["turquoise", "salmon"]
 cmap = LinearSegmentedColormap.from_list("turquoise_salmon", colors, N=temps_A.shape[0])
 
@@ -225,27 +205,23 @@ for k in range(temps_A.shape[0]):
     ax[1].plot(t[:-1], f_temp_A[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
     ax[2].plot(t_num, temps_A[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
 
-#ax[0].set_title('Infected') 
 ax[0].set_ylabel(r'Detected infected')
 ax[0].set_xlabel(r'days')
-#ax[1].set_title('Transmission Rate') 
 ax[1].set_ylabel(r'Rhs Model')
 ax[1].set_xlabel('days')
-#ax[2].set_title('Temperature')
 ax[2].set_ylabel(r'Temperature [°C]')
-#ax[2].set_ylabel(r'Relative Umidity [\%]')
 ax[2].set_xlabel('days')
-zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  # Riquadro di zoom in alto a destra
-zoom_ax.set_xlim([54, 59])  # Limiti per lo zoom sull'asse x (modifica a seconda del tuo intervallo)
-zoom_ax.set_ylim([0.029, 0.0315])  # Limiti per lo zoom sull'asse y (modifica a seconda del tuo intervallo)
+
+zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right") 
+zoom_ax.set_xlim([54, 59]) 
+zoom_ax.set_ylim([0.029, 0.0315])  
 zoom_ax.tick_params(axis='both', which='major', labelsize=7)
-# Loop per plottare i dati anche nel riquadro di zoom
+
 for k in range(temps_A.shape[0]):
     zoom_ax.plot(t, I_temp_A[k, :], '-', linewidth=2, color=cmap(k))
 
 fig.tight_layout()
 plt.savefig(output_folder + 'prova_test_temp_amplitude_f.pdf')
-#plt.show()
 
 fig,ax = plt.subplots(1,3, figsize=(5*width_in_inches, 1.5*height_in_inches), dpi=dpi)
 for k in range(temps_f.shape[0]):
@@ -253,21 +229,16 @@ for k in range(temps_f.shape[0]):
     ax[1].plot(t[:-1], f_temp_f[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
     ax[2].plot(t_num, temps_f[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
 
-#ax[0].set_title('Infected') 
 ax[0].set_ylabel(r'Detected infected')
 ax[0].set_xlabel(r'days')
-#ax[1].set_title('Transmission Rate') 
 ax[1].set_ylabel(r'Rhs Model')
 ax[1].set_xlabel('days')
-#ax[2].set_title('Temperature')
 ax[2].set_ylabel(r'Temperature [°C]')
-#ax[2].set_ylabel(r'Relative Umidity [\%]')
 ax[2].set_xlabel('days')
-zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  # Riquadro di zoom in alto a destra
-zoom_ax.set_xlim([49, 63])  # Limiti per lo zoom sull'asse x (modifica a seconda del tuo intervallo)
-zoom_ax.set_ylim([0.020, 0.0315])  # Limiti per lo zoom sull'asse y (modifica a seconda del tuo intervallo)
+zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")
+zoom_ax.set_xlim([49, 63]) 
+zoom_ax.set_ylim([0.020, 0.0315]) 
 zoom_ax.tick_params(axis='both', which='major', labelsize=7)
-# Loop per plottare i dati anche nel riquadro di zoom
 for k in range(temps_A.shape[0]):
     zoom_ax.plot(t, I_temp_f[k, :], '-', linewidth=2, color=cmap(k))
 
@@ -281,21 +252,18 @@ for k in range(temps_phi.shape[0]):
     ax[1].plot(t[:-1], f_temp_phi[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
     ax[2].plot(t_num, temps_phi[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
 
-#ax[0].set_title('Infected') 
 ax[0].set_ylabel(r'Detected infected')
 ax[0].set_xlabel(r'days')
-#ax[1].set_title('Transmission Rate') 
 ax[1].set_ylabel(r'Rhs Model')
 ax[1].set_xlabel('days')
-#ax[2].set_title('Temperature')
 ax[2].set_ylabel(r'Temperature [°C]')
-#ax[2].set_ylabel(r'Relative Umidity [\%]')
 ax[2].set_xlabel('days')
-zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  # Riquadro di zoom in alto a destra
-zoom_ax.set_xlim([53, 59])  # Limiti per lo zoom sull'asse x (modifica a seconda del tuo intervallo)
-zoom_ax.set_ylim([0.029, 0.032])  # Limiti per lo zoom sull'asse y (modifica a seconda del tuo intervallo)
+
+zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right") 
+zoom_ax.set_xlim([53, 59]) 
+zoom_ax.set_ylim([0.029, 0.032]) 
 zoom_ax.tick_params(axis='both', which='major', labelsize=7)
-# Loop per plottare i dati anche nel riquadro di zoom
+
 for k in range(temps_A.shape[0]):
     zoom_ax.plot(t, I_temp_phi[k, :], '-', linewidth=2, color=cmap(k))
 
@@ -309,21 +277,18 @@ for k in range(temps_Tm.shape[0]):
     ax[1].plot(t[:-1], f_temp_Tm[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
     ax[2].plot(t_num, temps_Tm[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
 
-#ax[0].set_title('Infected') 
 ax[0].set_ylabel(r'Detected infected')
 ax[0].set_xlabel(r'days')
-#ax[1].set_title('Transmission Rate') 
 ax[1].set_ylabel(r'Rhs model')
 ax[1].set_xlabel('days')
-#ax[2].set_title('Temperature')
 ax[2].set_ylabel(r'Temperature [°C]')
-#ax[2].set_ylabel(r'Relative Umidity [\%]')
 ax[2].set_xlabel('days')
-zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  # Riquadro di zoom in alto a destra
-zoom_ax.set_xlim([50, 65])  # Limiti per lo zoom sull'asse x (modifica a seconda del tuo intervallo)
-zoom_ax.set_ylim([0.022, 0.032])  # Limiti per lo zoom sull'asse y (modifica a seconda del tuo intervallo)
+
+zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right") 
+zoom_ax.set_xlim([50, 65]) 
+zoom_ax.set_ylim([0.022, 0.032])
 zoom_ax.tick_params(axis='both', which='major', labelsize=7)
-# Loop per plottare i dati anche nel riquadro di zoom
+
 for k in range(temps_A.shape[0]):
     zoom_ax.plot(t, I_temp_Tm[k, :], '-', linewidth=2, color=cmap(k))
 
@@ -339,21 +304,18 @@ for k in range(umids.shape[0]):
     ax[1].plot(t[:-1], f_umid[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
     ax[2].plot(t_num, umids[k,:], '-',linewidth = 2, label = 'Real', color = cmap(k))
 
-#ax[0].set_title('Infected') 
 ax[0].set_ylabel(r'Detected infected')
 ax[0].set_xlabel(r'days')
-#ax[1].set_title('Transmission Rate') 
 ax[1].set_ylabel(r'Rhs Model')
 ax[1].set_xlabel('days')
-#ax[2].set_title('Temperature')
-#ax[2].set_ylabel(r'Temperature [°C]')
 ax[2].set_ylabel(r'Relative Umidity [\%]')
 ax[2].set_xlabel('days')
-zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right")  # Riquadro di zoom in alto a destra
-zoom_ax.set_xlim([50, 62])  # Limiti per lo zoom sull'asse x (modifica a seconda del tuo intervallo)
-zoom_ax.set_ylim([0.022, 0.032])  # Limiti per lo zoom sull'asse y (modifica a seconda del tuo intervallo)
+
+zoom_ax = inset_axes(ax[0], width="30%", height="30%", loc="upper right") 
+zoom_ax.set_xlim([50, 62]) 
+zoom_ax.set_ylim([0.022, 0.032])  
 zoom_ax.tick_params(axis='both', which='major', labelsize=7)
-# Loop per plottare i dati anche nel riquadro di zoom
+
 for k in range(temps_A.shape[0]):
     zoom_ax.plot(t, I_umid[k, :], '-', linewidth=2, color=cmap(k))
 

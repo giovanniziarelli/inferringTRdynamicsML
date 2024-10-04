@@ -35,7 +35,7 @@ cases_testg = []
 
 uncertainty = '1e-1'
 scheme = 'testg'
-output_folder = '/home/giovanni/Desktop/LDNets/pprocess_images/infectious_'+str(scheme)+'_'+uncertainty+'_50/'
+output_folder =  '' # ex '/home/giovanni/Desktop/LDNets/pprocess_images/infectious_'+str(scheme)+'_'+uncertainty+'_50/'
 if not os.path.exists(output_folder):
     os.mkdir(output_folder)
 
@@ -46,14 +46,12 @@ output_folder_testg = output_folder + 'testg/'
 if not os.path.exists(output_folder_testg):
     os.mkdir(output_folder_testg)
 
-#os.mkdir(output_folder_train) 
-#os.mkdir(output_folder_testg)
 uncertainty_base = '0'
 
 for i in range(n_tests):
-    folder_name_train = '/home/giovanni/Desktop/LDNets/neurons_4_364_synthetic_lay2_err_'+uncertainty+'_size_50_trialsim_' +str(i+1) + '_T_obs_78/train/' 
-    folder_name_testg = '/home/giovanni/Desktop/LDNets/neurons_4_364_synthetic_lay2_err_'+uncertainty+'_size_50_trialsim_' +str(i+1) + '_T_obs_78/testg/' 
-    folder_name_testg_unc0 = '/home/giovanni/Desktop/LDNets/neurons_4_364_synthetic_lay2_err_0_size_50_trialsim_' +str(i+1) + '_T_obs_78/testg/' 
+    folder_name_train = '' # ex '/home/giovanni/Desktop/LDNets/neurons_4_364_synthetic_lay2_err_'+uncertainty+'_size_50_trialsim_' +str(i+1) + '_T_obs_78/train/' 
+    folder_name_testg = '' # ex '/home/giovanni/Desktop/LDNets/neurons_4_364_synthetic_lay2_err_'+uncertainty+'_size_50_trialsim_' +str(i+1) + '_T_obs_78/testg/' 
+    folder_name_testg_unc0 = '' # ex '/home/giovanni/Desktop/LDNets/neurons_4_364_synthetic_lay2_err_0_size_50_trialsim_' +str(i+1) + '_T_obs_78/testg/' 
     if i == 0:
         S_real_train     = np.loadtxt(folder_name_train + 'S_real.txt')
         E_real_train     = np.loadtxt(folder_name_train + 'E_real.txt')
@@ -81,7 +79,6 @@ for i in range(n_tests):
         S_week = S[:,::7*2]
         E_week = E[:,::7*2]
         cases_estim = S_week[:,:-1] + E_week[:,:-1] - S_week[:,1:] - E_week[:,1:]
-        #cases_train.append(np.loadtxt(folder_name_train + 'cases_train.txt'))
         cases_train.append(cases_estim)
     
     if np.any(np.isnan(np.loadtxt(folder_name_testg + 'S_rec_testg.txt'))):
@@ -97,7 +94,6 @@ for i in range(n_tests):
         S_week = S[:,::7*2]
         E_week = E[:,::7*2]
         cases_estim = S_week[:,:-1] + E_week[:,:-1] - S_week[:,1:] - E_week[:,1:]
-        #cases_train.append(np.loadtxt(folder_name_train + 'cases_train.txt'))
         cases_testg.append(cases_estim)
     
 
@@ -197,6 +193,7 @@ if plot_susceptible_train:
         plt.title(r'Susceptible')
         plt.savefig(output_folder_train + 'susc_' + str(i+1) +'_train.pdf', format='pdf', bbox_inches='tight')
         plt.close()
+
 if plot_exposed_train:
     for i in range(E_real_train.shape[0]):
         fig = plt.figure(figsize=(width_in_inches_train, height_in_inches_train), dpi=dpi)
@@ -209,6 +206,7 @@ if plot_exposed_train:
         plt.xlabel(r'days')
         plt.savefig(output_folder_train + 'exp_' + str(i+1) +'_train.pdf', format='pdf', bbox_inches='tight')
         plt.close()
+
 if plot_infected_train:
     for i in range(I_real_train.shape[0]):
         fig = plt.figure(figsize=(width_in_inches_train, height_in_inches_train), dpi=dpi)
@@ -221,6 +219,7 @@ if plot_infected_train:
         plt.xlabel(r'days')
         plt.savefig(output_folder_train + 'inf_' + str(i+1) +'_train.pdf', format='pdf', bbox_inches='tight')
         plt.close()
+
 if plot_beta_train:
     for i in range(I_real_train.shape[0]):
         fig = plt.figure(figsize=(width_in_inches_train, height_in_inches_train), dpi=dpi)
@@ -229,16 +228,10 @@ if plot_beta_train:
         plt.fill_between(t, quantile_0_05_beta_train[i,:], quantile_0_95_beta_train[i,:], color = color_area_tr, alpha=0.5, linewidth=0)
         plt.legend(frameon = False)
         plt.xlim([0, Tfin])
-        #plt.ylim([0, 0.15])
-        #plt.yticks([0, 0.05, 0.1, 0.15])
-        #plt.xticks([0, 100, 200, 300])
         plt.title(r'Transmission rate')
         plt.xlabel(r'days')
         plt.savefig(output_folder_train + 'beta_' + str(i+1) +'_train.pdf', format='pdf', bbox_inches='tight')
         plt.close()
-        if i == 38:
-            error_tr = np.mean(np.abs(median_beta_train[i,:] - beta_real_train[i,:]) / np.abs(beta_real_train[i,:]))
-            print(error_tr)
 
 if plot_cases_train:
     for i in range(I_real_train.shape[0]):
@@ -266,6 +259,7 @@ if plot_susceptible_testg:
         plt.xlabel(r'days')
         plt.savefig(output_folder_testg + 'susc_' + str(i+1) +'_testg.pdf', format='pdf', bbox_inches='tight')
         plt.close()
+
 if plot_exposed_testg:
     for i in range(E_real_testg.shape[0]):
         fig = plt.figure(figsize=(width_in_inches, height_in_inches), dpi=dpi)
@@ -279,6 +273,7 @@ if plot_exposed_testg:
         plt.xlabel(r'days')
         plt.savefig(output_folder_testg + 'exp_' + str(i+1) +'_testg.pdf', format='pdf', bbox_inches='tight')
         plt.close()
+
 if plot_infected_testg:
     for i in range(I_real_testg.shape[0]):
         fig = plt.figure(figsize=(width_in_inches, height_in_inches), dpi=dpi)
@@ -292,6 +287,7 @@ if plot_infected_testg:
         plt.xlabel(r'days')
         plt.savefig(output_folder_testg + 'inf_' + str(i+1) +'_testg.pdf', format='pdf', bbox_inches='tight')
         plt.close()
+
 if plot_beta_testg:
     for i in range(I_real_testg.shape[0]):
         fig = plt.figure(figsize=(width_in_inches, height_in_inches), dpi=dpi)
@@ -299,24 +295,20 @@ if plot_beta_testg:
         plt.plot(t,median_beta_testg[i, :], label = 'Median', color = color_median_tr, linewidth=1.5)
         plt.fill_between(t, quantile_0_05_beta_testg[i,:], quantile_0_95_beta_testg[i,:], color = color_area_tr, alpha=0.5, label=label_quantiles, linewidth=0)
         plt.axvspan(0, T_obs, facecolor=highlight_color, alpha=0.1)
-        #plt.legend()
         plt.xlim([0, Tfin])
-        #plt.title(r'Transmission rate')
         plt.xlabel(r'days')
         plt.savefig(output_folder_testg + 'beta_' + str(i+1) +'_testg.pdf', format='pdf', bbox_inches='tight')
         plt.close()
+
 if plot_cases_testg:
     for i in range(I_real_testg.shape[0]):
         fig = plt.figure(figsize=(width_in_inches, height_in_inches), dpi=dpi)
         plt.plot(np.arange(1, cases_real_testg.shape[1]+1),median_cases_testg[i, :], '-o', label = 'Median', color = color_median, linewidth=1.5, markersize=0.2)
         plt.plot(np.arange(1, int(T_obs/7)+1), cases_real_testg[i, :int(T_obs/7)], 'o', alpha = 0.5, color = color_real, label = 'Real points', linewidth=1.5, markersize=0.8)
         plt.plot(np.arange(int(T_obs/7)+1, len(cases_real_testg_u0[i,:])+1), cases_real_testg_u0[i, int(T_obs/7):], '--', alpha = 0.3, color = color_real, label = 'Real points', linewidth=1.5, markersize=0.8)
-        #plt.plot(np.arange(1, cases_real_testg.shape[1]+1), cases_real_testg[i, :], 'o', alpha = 0.5, color = color_real, label = 'Real points', linewidth=1.5, markersize=0.8)
         plt.fill_between(np.arange(1, cases_real_testg.shape[1]+1), quantile_0_05_cases_testg[i,:], quantile_0_95_cases_testg[i,:], color = color_area, alpha=0.5, label=label_quantiles, linewidth=0)
         plt.axvspan(0, int(T_obs/7), facecolor=highlight_color, alpha=0.1)
-        #plt.legend()
         plt.xlim([0, cases_real_testg.shape[1]+1])
-        #plt.title(r'Cases')
         plt.xlabel(r'weeks')
         plt.savefig(output_folder_testg + 'cases_' + str(i+1) +'_testg.pdf', format='pdf', bbox_inches='tight')
         plt.close()
