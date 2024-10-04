@@ -89,7 +89,7 @@ def generate_temperature(fun_type, t_max=1.0, T_max=1.0):
         if type_fun >= 5:
             return generate_temperature("boy", t_max, T_max)
 
-def generate_temp_by_adri(beta_ref):
+def generate_temp_style0(beta_ref):
     # temperature generate con valori in [temp_min, temp_max]
     # e con tempo in [0, 1]
     tau_noise = random.uniform(10, 15)
@@ -114,7 +114,7 @@ def generate_temp_by_adri(beta_ref):
     #plt.show()
     return T_return, Betaeq_return
 
-def generate_temp_by_gio(beta_ref, phase_T, f_T, amp_T, T_mean):
+def generate_temp_style1(beta_ref, phase_T, f_T, amp_T, T_mean):
     """
     T(t) = 273 cos(f t + \phi)
     \dot{T}(t) = 273 f sin(f t + \phi)
@@ -150,7 +150,7 @@ def generate_temp_by_gio(beta_ref, phase_T, f_T, amp_T, T_mean):
     #plt.show()
     return T, beta
 
-def generate_temp_by_gio_old(beta_ref):
+def generate_temp_style1_old(beta_ref):
     """
     T(t) = 273 cos(f t + \phi)
     \dot{T}(t) = 273 f sin(f t + \phi)

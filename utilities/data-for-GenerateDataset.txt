@@ -1,9 +1,9 @@
-train_fun_type: giovanni-style
-val_fun_type: giovanni-style
-test_fun_type: giovanni-style
+train_fun_type: style1
+val_fun_type: style1
+test_fun_type: style1
 alpha: 0.1429 
 gamma: 0.0714
-nome_file: temperature_25.pkl
+file_name: temperature_25.pkl
 K: 25 
 K_val: 25
 K_test: 25
@@ -13,4 +13,4 @@ beta0_sup: 0.1
 N: 365 
 S_inf: 0.80
 t_max: 12.0
-n_variabili: 1
+n_variables: 1
