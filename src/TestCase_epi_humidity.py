@@ -118,10 +118,10 @@ folder_train = folder + 'train/'
 folder_testg = folder + 'testg/'
 
 # Loading datasets
-input_dataset_path_temp    = '/home/giovanni/Desktop/inferringTRdynamicsML/italian-temperatures/tmedia_national_length'+str(T_fin)+'.csv'                                       # input dataset for Temperature
+input_dataset_path_temp    = '/home/giovanni/Desktop/inferringTRdynamicsML/italian-temperatures/tmean_national_length'+str(T_fin)+'.csv'                                       # input dataset for Temperature
 input_dataset_extern_temp  = np.loadtxt(input_dataset_path_temp)
-input_dataset_path_umid    = '/home/giovanni/Desktop/inferringTRdynamicsML/italian-temperatures/umid_national_length'+str(T_fin)+'.csv'                                         # input dataset for Humidity
-input_dataset_extern_umid  = np.loadtxt(input_dataset_path_umid)
+input_dataset_path_humid    = '/home/giovanni/Desktop/inferringTRdynamicsML/italian-temperatures/humid_national_length'+str(T_fin)+'.csv'                                         # input dataset for Humidity
+input_dataset_extern_humid  = np.loadtxt(input_dataset_path_humid)
 output_dataset_path        = '/home/giovanni/Desktop/inferringTRdynamicsML/influnet/data-aggregated/epidemiological_data/processed_output_new_cases_'+str(N_weeks)+'_weeks.csv' # output dataset
 output_dataset_extern      = np.loadtxt(output_dataset_path)
 
@@ -157,7 +157,7 @@ normalization = {
 #%% Dataset parameters
 n_size = input_dataset_extern_temp.shape[0]
 
-training_var_numpy_orig = np.stack((input_dataset_extern_temp, input_dataset_extern_umid), axis = 2)
+training_var_numpy_orig = np.stack((input_dataset_extern_temp, input_dataset_extern_humid), axis = 2)
 cases                   = output_dataset_extern / undetection_mean_value
 
 def epiModel_rhs(state, beta): # state dim (samples, 3), beta dim (samples,1)
@@ -221,7 +221,7 @@ if plot_vars: # specific for temperature and humidity
     plt.xlabel(r'days')
 
     # Saving pdf 
-    plt.savefig(os.path.join(folder, f'umid_all.pdf'), format='pdf')
+    plt.savefig(os.path.join(folder, f'humid_all.pdf'), format='pdf')
     plt.close()
 
     plt.figure(figsize=(2*width_in_inches, 2*height_in_inches), dpi=dpi)

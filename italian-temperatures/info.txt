@@ -1,0 +1,4 @@
+1) Update temperatures and humidity's time series: python3 download_temp.py
+2) Remove NaN time series, ex. rm Milano/2019/Agosto.csv and Settembre.csv
+3) Average national data and concatenate: python3 process_and_concatenate.py
+4) Generate input data: python3 process_national_data.py
