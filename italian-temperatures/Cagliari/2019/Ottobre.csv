@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Cagliari;1/10/2019;""23"";""17"";""30"";""18"";""77"";""20"";""11"";""15"";""0"";""1013"";""0"";""0"";"""""
 "Cagliari;2/10/2019;""22"";""15"";""29"";""15"";""66"";""19"";""18"";""35"";""0"";""1008"";""0"";""0"";"""""
 "Cagliari;3/10/2019;""21"";""17"";""25"";""13"";""60"";""20"";""19"";""33"";""0"";""1009"";""0"";""0"";"""""

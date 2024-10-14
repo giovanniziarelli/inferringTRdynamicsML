@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Firenze;1/4/2020;""8"";""4"";""13"";""0"";""36"";""21"";""15"";""28"";""0"";""1019"";""0"";""0"";"""""
 "Firenze;2/4/2020;""8"";""-2"";""17"";""0"";""44"";""20"";""6"";""17"";""0"";""1014"";""0"";""0"";"""""
 "Firenze;3/4/2020;""10"";""1"";""19"";""1"";""50"";""20"";""8"";""22"";""0"";""1013"";""0"";""0"";"""""

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Firenze;1/10/2010;""16"";""13"";""20"";""14"";""85"";""9"";""3"";""6"";""0"";""1015"";""0"";""0"";""pioggia """
 "Firenze;2/10/2010;""17"";""11"";""23"";""12"";""79"";""6"";""3"";""8"";""0"";""1018"";""0"";""0"";""nebbia """
 "Firenze;3/10/2010;""17"";""12"";""23"";""13"";""81"";""12"";""3"";""7"";""0"";""1018"";""0"";""0"";"""""

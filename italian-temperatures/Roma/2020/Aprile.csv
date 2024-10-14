@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Roma;1/4/2020;""8"";""4"";""13"";""0"";""41"";""20"";""18"";""31"";""0"";""1015"";""0"";""0"";"""""
 "Roma;2/4/2020;""10"";""2"";""13"";""1"";""52"";""20"";""10"";""18"";""0"";""1013"";""0"";""0"";"""""
 "Roma;3/4/2020;""12"";""3"";""17"";""3"";""55"";""20"";""10"";""21"";""0"";""1011"";""0"";""0"";"""""

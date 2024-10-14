@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Torino;1/12/2012;""5"";""1"";""6"";""2"";""84"";""6"";""6"";""9"";""0"";""1010"";""0"";""0"";"""""
 "Torino;2/12/2012;""3"";""-2"";""10"";""2"";""65"";""8"";""11"";""30"";""46"";""1009"";""0"";""0"";""nebbia """
 "Torino;3/12/2012;""3"";""-2"";""8"";""0"";""36"";""0"";""10"";""24"";""0"";""1014"";""0"";""0"";"""""

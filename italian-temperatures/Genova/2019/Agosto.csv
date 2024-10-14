@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Genova;1/8/2019;""25"";""24"";""26"";""20"";""74"";""19"";""7"";""13"";""0"";""1014"";""0"";""0"";"""""
 "Genova;2/8/2019;""25"";""22"";""28"";""19"";""69"";""20"";""10"";""24"";""0"";""1011"";""0"";""0"";"""""
 "Genova;3/8/2019;""26"";""22"";""29"";""16"";""56"";""19"";""9"";""18"";""0"";""1011"";""0"";""0"";"""""

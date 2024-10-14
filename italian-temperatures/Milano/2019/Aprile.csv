@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Milano;1/4/2019;""14"";""5"";""22"";""3"";""48"";""19"";""5"";""17"";""0"";""1016"";""0"";""0"";"""""
 "Milano;2/4/2019;""15"";""9"";""21"";""5"";""52"";""20"";""8"";""17"";""0"";""1013"";""0"";""0"";""pioggia """
 "Milano;3/4/2019;""12"";""9"";""14"";""7"";""72"";""19"";""12"";""28"";""0"";""1007"";""0"";""0"";""pioggia """

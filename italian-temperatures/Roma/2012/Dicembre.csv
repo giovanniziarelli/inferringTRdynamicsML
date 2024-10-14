@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Roma;1/12/2012;""9"";""7"";""12"";""7"";""84"";""9"";""11"";""24"";""39"";""1007"";""0"";""0"";""pioggia temporale """
 "Roma;2/12/2012;""10"";""6"";""13"";""8"";""87"";""10"";""8"";""26"";""43"";""1007"";""0"";""0"";""pioggia temporale """
 "Roma;3/12/2012;""5"";""2"";""9"";""3"";""69"";""10"";""13"";""32"";""50"";""1012"";""0"";""0"";""pioggia temporale """

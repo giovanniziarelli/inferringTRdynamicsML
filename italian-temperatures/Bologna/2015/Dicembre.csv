@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Bologna;1/12/2015;""5"";""-1"";""12"";""4"";""90"";""4"";""5"";""9"";""0"";""1025"";""0"";""0"";""nebbia """
 "Bologna;2/12/2015;""4"";""0"";""12"";""4"";""93"";""3"";""5"";""11"";""0"";""1030"";""0"";""0"";""nebbia """
 "Bologna;3/12/2015;""3"";""-1"";""9"";""4"";""95"";""2"";""6"";""9"";""0"";""1032"";""0"";""0"";""nebbia """

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Palermo;1/6/2019;""18"";""15"";""20"";""14"";""76"";""21"";""13"";""24"";""0"";""1019"";""0"";""0"";"""""
 "Palermo;2/6/2019;""18"";""14"";""20"";""13"";""74"";""19"";""10"";""22"";""0"";""1018"";""0"";""0"";"""""
 "Palermo;3/6/2019;""19"";""16"";""22"";""15"";""78"";""20"";""8"";""17"";""0"";""1018"";""0"";""0"";"""""

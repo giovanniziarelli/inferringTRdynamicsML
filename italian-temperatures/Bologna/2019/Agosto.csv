@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Bologna;1/8/2019;""29"";""22"";""33"";""16"";""47"";""21"";""8"";""13"";""0"";""1013"";""0"";""0"";"""""
 "Bologna;2/8/2019;""24"";""19"";""32"";""15"";""56"";""21"";""11"";""44"";""0"";""1010"";""0"";""0"";""pioggia temporale """
 "Bologna;3/8/2019;""24"";""16"";""31"";""15"";""59"";""21"";""8"";""15"";""0"";""1011"";""0"";""0"";"""""

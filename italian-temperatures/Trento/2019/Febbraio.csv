@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Trento;1/2/2019;""0"";""0"";""1"";""0"";""98"";""1"";""1"";""4"";""0"";""1000"";""0"";""0"";""pioggia neve """
 "Trento;2/2/2019;""2"";""1"";""4"";""1"";""95"";""12"";""3"";""8"";""0"";""999"";""0"";""0"";""pioggia neve """
 "Trento;3/2/2019;""5"";""1"";""7"";""2"";""75"";""14"";""5"";""15"";""0"";""1007"";""0"";""0"";""pioggia """

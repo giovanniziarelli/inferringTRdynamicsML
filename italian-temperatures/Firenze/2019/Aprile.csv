@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Firenze;1/4/2019;""15"";""5"";""25"";""4"";""54"";""21"";""6"";""21"";""0"";""1014"";""0"";""0"";"""""
 "Firenze;2/4/2019;""14"";""7"";""21"";""5"";""53"";""21"";""7"";""18"";""0"";""1014"";""0"";""0"";"""""
 "Firenze;3/4/2019;""13"";""10"";""16"";""9"";""81"";""19"";""5"";""13"";""0"";""1010"";""0"";""0"";""pioggia """

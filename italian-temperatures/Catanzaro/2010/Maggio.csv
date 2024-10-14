@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Catanzaro;1/5/2010;""16"";""12"";""20"";""12"";""72"";""10"";""6"";""13"";""0"";""1017"";""0"";""0"";"""""
 "Catanzaro;2/5/2010;""16"";""8"";""23"";""10"";""66"";""12"";""7"";""16"";""0"";""1013"";""0"";""0"";"""""
 "Catanzaro;3/5/2010;""18"";""11"";""23"";""13"";""73"";""11"";""8"";""17"";""0"";""1011"";""0"";""0"";"""""

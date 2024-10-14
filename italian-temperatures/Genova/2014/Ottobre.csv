@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Genova;1/10/2014;""20"";""18"";""24"";""17"";""81"";""12"";""7"";""15"";""0"";""1023"";""0"";""0"";""pioggia """
 "Genova;2/10/2014;""22"";""18"";""26"";""15"";""65"";""18"";""14"";""20"";""0"";""1023"";""0"";""0"";""pioggia """
 "Genova;3/10/2014;""22"";""19"";""25"";""14"";""59"";""13"";""9"";""15"";""0"";""1021"";""0"";""0"";"""""

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Trento;1/5/2015;""14"";""12"";""15"";""10"";""77"";""10"";""7"";""11"";""0"";""1010"";""0"";""0"";""pioggia """
 "Trento;2/5/2015;""20"";""13"";""26"";""11"";""59"";""10"";""8"";""19"";""41"";""1009"";""0"";""0"";"""""
 "Trento;3/5/2015;""18"";""15"";""19"";""14"";""77"";""10"";""5"";""7"";""0"";""1012"";""0"";""0"";"""""

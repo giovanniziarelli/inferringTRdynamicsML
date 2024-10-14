@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Torino;1/9/2019;""23"";""18"";""30"";""18"";""75"";""21"";""7"";""22"";""0"";""1013"";""0"";""0"";""pioggia temporale """
 "Torino;2/9/2019;""23"";""18"";""28"";""17"";""71"";""21"";""7"";""11"";""0"";""1014"";""0"";""0"";"""""
 "Torino;3/9/2019;""23"";""17"";""27"";""15"";""65"";""18"";""8"";""15"";""0"";""1020"";""0"";""0"";"""""

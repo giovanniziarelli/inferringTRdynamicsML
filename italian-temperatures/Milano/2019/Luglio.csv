@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Milano;1/7/2019;""28"";""24"";""35"";""18"";""55"";""20"";""8"";""33"";""0"";""1017"";""0"";""0"";""pioggia temporale """
 "Milano;2/7/2019;""28"";""22"";""34"";""15"";""46"";""20"";""9"";""17"";""0"";""1014"";""0"";""0"";"""""
 "Milano;3/7/2019;""27"";""21"";""33"";""18"";""57"";""19"";""11"";""24"";""0"";""1015"";""0"";""0"";""pioggia temporale """

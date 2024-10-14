@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Trieste;1/1/2020;""11"";""9"";""14"";""4"";""46"";""18"";""0"";""0"";""0"";""1030"";""0"";""0"";"""""
 "Trieste;2/1/2020;""9"";""5"";""13"";""4"";""63"";""23"";""0"";""0"";""0"";""1031"";""0"";""0"";"""""
 "Trieste;3/1/2020;""8"";""4"";""11"";""4"";""74"";""20"";""0"";""0"";""0"";""1027"";""0"";""0"";"""""

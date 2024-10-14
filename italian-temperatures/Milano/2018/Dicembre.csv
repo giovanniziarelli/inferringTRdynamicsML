@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Milano;1/12/2018;""3"";""-1"";""7"";""3"";""96"";""3"";""3"";""8"";""0"";""1020"";""0"";""0"";""nebbia """
 "Milano;2/12/2018;""4"";""1"";""7"";""3"";""91"";""5"";""6"";""11"";""0"";""1019"";""0"";""0"";""nebbia """
 "Milano;3/12/2018;""7"";""4"";""10"";""4"";""85"";""5"";""5"";""13"";""0"";""1014"";""0"";""0"";""pioggia """

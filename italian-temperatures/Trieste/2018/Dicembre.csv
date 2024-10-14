@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Trieste;1/12/2018;""10"";""7"";""14"";""5"";""75"";""18"";""2"";""5"";""0"";""1019"";""0"";""0"";"""""
 "Trieste;2/12/2018;""9"";""8"";""10"";""6"";""80"";""21"";""2"";""4"";""0"";""1018"";""0"";""0"";"""""
 "Trieste;3/12/2018;""10"";""8"";""11"";""9"";""94"";""7"";""1"";""4"";""0"";""1014"";""0"";""0"";""pioggia """

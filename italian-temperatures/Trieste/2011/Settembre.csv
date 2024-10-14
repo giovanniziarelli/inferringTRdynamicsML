@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Trieste;1/9/2011;""24"";""21"";""28"";""19"";""73"";""13"";""2"";""4"";""0"";""1013"";""0"";""0"";"""""
 "Trieste;2/9/2011;""26"";""22"";""30"";""20"";""69"";""14"";""3"";""6"";""0"";""1014"";""0"";""0"";"""""
 "Trieste;3/9/2011;""26"";""23"";""30"";""20"";""66"";""20"";""6"";""19"";""0"";""1013"";""0"";""0"";"""""

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Roma;1/12/2017;""8"";""5"";""12"";""2"";""67"";""20"";""9"";""17"";""0"";""1008"";""0"";""0"";"""""
 "Roma;2/12/2017;""9"";""5"";""12"";""1"";""60"";""20"";""11"";""21"";""0"";""1007"";""0"";""0"";""pioggia """
 "Roma;3/12/2017;""7"";""5"";""9"";""5"";""86"";""17"";""9"";""13"";""0"";""1015"";""0"";""0"";""pioggia """

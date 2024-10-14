@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Venezia;1/5/2020;""15"";""11"";""19"";""12"";""80"";""21"";""9"";""18"";""0"";""1007"";""0"";""0"";""pioggia temporale """
 "Venezia;2/5/2020;""17"";""12"";""21"";""13"";""77"";""19"";""12"";""22"";""0"";""1006"";""0"";""0"";"""""
 "Venezia;3/5/2020;""16"";""12"";""20"";""8"";""59"";""21"";""15"";""28"";""0"";""1013"";""0"";""0"";"""""

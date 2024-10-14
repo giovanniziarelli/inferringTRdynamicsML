@@ -23,142 +23,133 @@ width_in_inches  = width_pixels / dpi
 height_in_inches = height_pixels / dpi
 
 
-def add_days(data_str, n):
+def add_days(date_str, n):
     """
-    Aggiunge N giorni a una data specificata in formato yyyy-mm-dd.
-
+    Add n days to given date
+    
     Parameters:
-    data_str (str): La data in formato yyyy-mm-dd.
-    n (int): Il numero di giorni da aggiungere.
+    date_str (str): date string format yyyy-mm-dd.
+    n (int): days to add.
 
     Returns:
-    str: La nuova data in formato yyyy-mm-dd.
+    str: format yyyy-mm-dd.
     """
-    data = datetime.strptime(data_str, "%Y-%m-%d")
-    nuova_data = data + timedelta(days=n)
-    return nuova_data.strftime("%Y-%m-%d")
+    date = datetime.strptime(date_str, "%Y-%m-%d")
+    new_date = date + timedelta(days=n)
+    return new_date.strftime("%Y-%m-%d")
 
-def add_year(data_str):
+def add_year(date_str):
     """
-    Aggiunge un anno a una data specificata in formato yyyy-mm-dd.
-
+    Add one year to given date
+    
     Parameters:
-    data_str (str): La data in formato yyyy-mm-dd.
+    date_str (str): date string format yyyy-mm-dd.
 
     Returns:
-    str: La nuova data in formato yyyy-mm-dd.
+    str: format yyyy-mm-dd.
     """
-    data = datetime.strptime(data_str, "%Y-%m-%d")
+    date = datetime.strptime(date_str, "%Y-%m-%d")
     try:
-        nuova_data = data.replace(year=data.year + 1)
+        new_date = date.replace(year=date.year + 1)
     except ValueError:
-        # Questo gestisce il caso del 29 febbraio in un anno bisestile
-        nuova_data = data.replace(year=data.year + 1, day=28)
+        # 29th february in leap years
+        new_date = date.replace(year=date.year + 1, day=28)
 
-    return nuova_data.strftime("%Y-%m-%d")
+    return new_date.strftime("%Y-%m-%d")
 
-def lista_date(data_str, n):
+def list_date(date_str, n):
     """
-    Restituisce una lista di date comprese tra la data iniziale e la data più n giorni.
+    List of dates betwwn date_str and date_str + n (days)
 
     Parameters:
-    data_str (str): La data in formato yyyy-mm-dd.
-    n (int): Il numero di giorni da aggiungere.
+    date_str (str): date string format yyyy-mm-dd.
+    n (int): days to add.
 
     Returns:
-    list: Lista di date in formato yyyy-mm-dd.
+    list: dates in format yyyy-mm-dd.
+    
     """
-    data_iniziale = datetime.strptime(data_str, "%Y-%m-%d")
-    lista_di_date = []
+    initial_date = datetime.strptime(date_str, "%Y-%m-%d")
+    dates_list = []
 
     for i in range(n + 1):
-        nuova_data = data_iniziale + timedelta(days=i)
-        lista_di_date.append(nuova_data.strftime("%Y-%m-%d"))
+        new_date = initial_date + timedelta(days=i)
+        dates_list.append(new_date.strftime("%Y-%m-%d"))
 
-    return lista_di_date
+    return dates_list
 
-df = pd.read_csv('national_temps_umid.csv', sep = ';')
-print(df)
+df = pd.read_csv('national_temps_humid.csv', sep = ';')
 
-T_cut = 196#49#98
+T_cut = 196
 T_wave = 196
 n_per_season = int(T_wave / T_cut)
 n_years =10
-file_path_temp = 'tmedia_national_length_missing_' + str(T_cut) + '.csv'
-file_path_umid = 'umid_national_length_missing_' + str(T_cut) + '.csv'
+file_path_temp = 'tmean_national_length_' + str(T_cut) + '.csv'
+file_path_humid = 'humid_national_length_' + str(T_cut) + '.csv'
 
-data_min  = '2010-10-21'
-data_list = [data_min]
+date_min  = '2010-10-21'
+date_list = [date_min]
 for i in range(n_years):
     for j in range(n_per_season-1):
-        data_list.append(add_days(data_list[-1], T_cut))
+        date_list.append(add_days(date_list[-1], T_cut))
     if i != n_years - 1:
-        data_min = add_year(data_min)
-        data_list.append(data_min)
-print(data_list)
+        date_min = add_year(date_min)
+        date_list.append(date_min)
 
 df['DATA'] = df['DATA'].astype(str)
 df.set_index('DATA')
-tmedia = np.zeros((len(data_list), T_cut+1))
-umid   = np.zeros((len(data_list), T_cut+1))
-for i in range(len(data_list)):
-    lista_data = lista_date(data_list[i], T_cut)
-    dates = df['DATA'].isin(lista_data)
-    print(lista_data)
-    tmedia[i, :] = df.loc[dates, 'TMEDIA'].values
-    umid[i, :]   = df.loc[dates, 'UMID'].values
+tmean = np.zeros((len(date_list), T_cut+1))
+humid   = np.zeros((len(date_list), T_cut+1))
 
-np.savetxt(file_path_temp, tmedia)
-np.savetxt(file_path_umid, umid)
-directory_img = '/home/giovanni/Desktop/LDNets/italian-temperatures/img/'
+for i in range(len(date_list)):
+    l_d = list_date(date_list[i], T_cut)
+    dates = df['DATA'].isin(l_d)
+    tmean[i, :] = df.loc[dates, 'TMEAN'].values
+    humid[i, :]   = df.loc[dates, 'HUMID'].values
+
+np.savetxt(file_path_temp, tmean)
+np.savetxt(file_path_humid, humid)
+directory_img = 'img/'
 if not os.path.exists(directory_img):
     os.mkdir(directory_img)
-directory_img = os.path.join(directory_img, 'tmedia_umid_national_length' + str(T_cut) + '/')
+directory_img = os.path.join(directory_img, 'tmean_humid_national_length' + str(T_cut) + '/')
 if not os.path.exists(directory_img):
     os.mkdir(directory_img)
 
 seasons = [r'2010-2011', r'2011-2012',r'2012-2013',r'2013-2014',r'2014-2015',r'2015-2016',r'2016-2017',r'2017-2018',r'2018-2019',r'2019-2020']
 seasons_r = ['2010-2011', '2011-2012','2012-2013','2013-2014','2014-2015','2015-2016','2016-2017','2017-2018','2018-2019','2019-2020']
 
-for i, tm in enumerate(tmedia):
+for i, tm in enumerate(tmean):
     plt.figure(figsize=(width_in_inches, height_in_inches), dpi=dpi)
-    lista_data = lista_date(data_list[i], T_cut)
+    lista_date = list_date(date_list[i], T_cut)
     plt.plot(tm, linewidth = 1.5, color='navy')
     plt.ylabel(r'Temperature [°C]')
-    plt.xticks(ticks=np.arange(0, len(lista_data), 56), labels=lista_data[::56], rotation=45)
-    # Salvataggio del grafico come PDF
+    plt.xticks(ticks=np.arange(0, len(lista_date), 56), labels=lista_date[::56], rotation=45)
     plt.savefig(os.path.join(directory_img, f'temp_'+seasons_r[i]+'.pdf'), format='pdf')
-    # Chiudere la figura per liberare memoria
     plt.close()
 
 plt.figure(figsize=(3*width_in_inches, 3*height_in_inches), dpi=dpi)
-for i, tm in enumerate(tmedia):
+for i, tm in enumerate(tmean):
     plt.plot(tm, linewidth = 1.5, label=seasons_r[i])
 plt.legend()
-plt.xticks(ticks=np.arange(0, len(lista_data), 56), labels=lista_data[::56], rotation=45)
-    # Salvataggio del grafico come PDF
+plt.xticks(ticks=np.arange(0, len(lista_date), 56), labels=lista_date[::56], rotation=45)
 plt.savefig(os.path.join(directory_img, f'temp_all.pdf'), format='pdf')
-    # Chiudere la figura per liberare memoria
 plt.close()
 
 
-for i, um in enumerate(umid):
+for i, um in enumerate(humid):
     plt.figure(figsize=(width_in_inches, height_in_inches), dpi=dpi)
-    lista_data = lista_date(data_list[i], T_cut)
+    lista_date = list_date(date_list[i], T_cut)
     plt.plot(um, linewidth = 1.5, color='peru')
     plt.ylabel(r'Relative Umidity [\%]')
-    plt.xticks(ticks=np.arange(0, len(lista_data), 56), labels=lista_data[::56], rotation=45)
-    # Salvataggio del grafico come PDF
-    plt.savefig(os.path.join(directory_img, f'umid_'+seasons_r[i]+'.pdf'), format='pdf')
-    # Chiudere la figura per liberare memoria
+    plt.xticks(ticks=np.arange(0, len(lista_date), 56), labels=lista_date[::56], rotation=45)
+    plt.savefig(os.path.join(directory_img, f'humid_'+seasons_r[i]+'.pdf'), format='pdf')
     plt.close()
 
 plt.figure(figsize=(3*width_in_inches, 3*height_in_inches), dpi=dpi)
-for i, um in enumerate(umid):
+for i, um in enumerate(humid):
     plt.plot(um, linewidth = 1.5, label=seasons_r[i])
 plt.legend()
-plt.xticks(ticks=np.arange(0, len(lista_data), 56), labels=lista_data[::56], rotation=45)
-    # Salvataggio del grafico come PDF
-plt.savefig(os.path.join(directory_img, f'umid_all.pdf'), format='pdf')
-# Chiudere la figura per liberare memoria
+plt.xticks(ticks=np.arange(0, len(lista_date), 56), labels=lista_date[::56], rotation=45)
+plt.savefig(os.path.join(directory_img, f'humid_all.pdf'), format='pdf')
 plt.close()

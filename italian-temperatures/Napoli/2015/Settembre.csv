@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Napoli;1/9/2015;""27"";""22"";""31"";""19"";""62"";""17"";""8"";""19"";""0"";""0"";""0"";""0"";"""""
 "Napoli;2/9/2015;""26"";""21"";""31"";""18"";""63"";""12"";""8"";""17"";""0"";""1014"";""0"";""0"";"""""
 "Napoli;3/9/2015;""26"";""22"";""29"";""20"";""67"";""11"";""8"";""17"";""0"";""1014"";""0"";""0"";"""""

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Ancona;1/7/2016;""26"";""22"";""29"";""16"";""55"";""0"";""10"";""20"";""0"";""1016"";""0"";""0"";"""""
 "Ancona;2/7/2016;""27"";""19"";""33"";""18"";""59"";""10"";""9"";""19"";""0"";""1014"";""0"";""0"";"""""
 "Ancona;3/7/2016;""26"";""21"";""30"";""18"";""62"";""10"";""10"";""19"";""0"";""1014"";""0"";""0"";"""""

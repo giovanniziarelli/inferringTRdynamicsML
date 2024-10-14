@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Palermo;1/9/2020;""25"";""24"";""27"";""16"";""57"";""22"";""15"";""22"";""0"";""1013"";""0"";""0"";""pioggia """
 "Palermo;2/9/2020;""26"";""24"";""27"";""17"";""60"";""20"";""12"";""18"";""0"";""1013"";""0"";""0"";"""""
 "Palermo;3/9/2020;""26"";""24"";""27"";""18"";""63"";""20"";""18"";""28"";""0"";""1018"";""0"";""0"";"""""

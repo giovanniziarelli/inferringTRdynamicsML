@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Venezia;1/11/2016;""12"";""9"";""16"";""9"";""86"";""6"";""7"";""11"";""0"";""1024"";""0"";""0"";"""""
 "Venezia;2/11/2016;""12"";""10"";""14"";""10"";""90"";""3"";""5"";""13"";""0"";""1016"";""0"";""0"";""nebbia """
 "Venezia;3/11/2016;""11"";""7"";""15"";""6"";""74"";""4"";""16"";""30"";""0"";""1017"";""0"";""0"";""nebbia """

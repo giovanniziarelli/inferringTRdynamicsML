@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Bologna;1/6/2020;""20"";""13"";""26"";""10"";""54"";""20"";""10"";""18"";""0"";""1017"";""0"";""0"";"""""
 "Bologna;2/6/2020;""22"";""15"";""29"";""10"";""49"";""21"";""12"";""28"";""0"";""1013"";""0"";""0"";""pioggia temporale """
 "Bologna;3/6/2020;""21"";""13"";""28"";""12"";""59"";""19"";""10"";""18"";""0"";""1008"";""0"";""0"";""pioggia temporale """

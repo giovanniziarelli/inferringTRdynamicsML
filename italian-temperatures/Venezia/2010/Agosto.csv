@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Venezia;1/8/2010;""24"";""18"";""29"";""18"";""70"";""21"";""4"";""8"";""0"";""1017"";""0"";""0"";"""""
 "Venezia;2/8/2010;""25"";""20"";""29"";""20"";""75"";""13"";""4"";""8"";""0"";""1014"";""0"";""0"";"""""
 "Venezia;3/8/2010;""25"";""20"";""29"";""20"";""74"";""1188"";""5"";""20"";""0"";""1009"";""0"";""0"";""pioggia """

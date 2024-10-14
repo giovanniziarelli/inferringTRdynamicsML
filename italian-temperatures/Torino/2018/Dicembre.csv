@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Torino;1/12/2018;""4"";""1"";""5"";""2"";""91"";""5"";""4"";""8"";""0"";""1020"";""0"";""0"";"""""
 "Torino;2/12/2018;""3"";""0"";""8"";""2"";""93"";""4"";""5"";""11"";""0"";""1018"";""0"";""0"";""nebbia """
 "Torino;3/12/2018;""4"";""0"";""10"";""3"";""88"";""20"";""5"";""13"";""0"";""1014"";""0"";""0"";""pioggia """

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Venezia;1/12/2019;""8"";""7"";""9"";""4"";""74"";""19"";""17"";""21"";""0"";""1020"";""0"";""0"";""pioggia """
 "Venezia;2/12/2019;""10"";""8"";""11"";""8"";""90"";""14"";""13"";""22"";""0"";""1016"";""0"";""0"";""pioggia """
 "Venezia;3/12/2019;""6"";""3"";""9"";""2"";""68"";""20"";""16"";""21"";""0"";""1025"";""0"";""0"";"""""

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Torino;1/7/2020;""25"";""22"";""29"";""19"";""73"";""19"";""8"";""17"";""0"";""1012"";""0"";""0"";""pioggia temporale """
 "Torino;2/7/2020;""24"";""19"";""30"";""18"";""74"";""19"";""8"";""24"";""0"";""1011"";""0"";""0"";""pioggia temporale """
 "Torino;3/7/2020;""22"";""17"";""28"";""15"";""68"";""20"";""10"";""26"";""0"";""1013"";""0"";""0"";""pioggia temporale """

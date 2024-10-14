@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Genova;1/12/2012;""9"";""8"";""12"";""2"";""64"";""10"";""7"";""11"";""0"";""1008"";""0"";""0"";"""""
 "Genova;2/12/2012;""9"";""7"";""14"";""2"";""55"";""10"";""6"";""17"";""0"";""1008"";""0"";""0"";""temporale """
 "Genova;3/12/2012;""9"";""5"";""13"";""2"";""38"";""10"";""8"";""19"";""0"";""1015"";""0"";""0"";"""""

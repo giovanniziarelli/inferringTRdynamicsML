@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Firenze;1/10/2018;""17"";""14"";""21"";""13"";""79"";""18"";""10"";""22"";""0"";""1008"";""0"";""0"";""pioggia temporale """
 "Firenze;2/10/2018;""16"";""14"";""19"";""9"";""64"";""19"";""11"";""28"";""0"";""1014"";""0"";""0"";""pioggia """
 "Firenze;3/10/2018;""17"";""7"";""26"";""7"";""55"";""19"";""8"";""22"";""0"";""1019"";""0"";""0"";"""""

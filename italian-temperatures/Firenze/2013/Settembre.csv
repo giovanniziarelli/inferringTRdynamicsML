@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Firenze;1/9/2013;""24"";""16"";""32"";""12"";""50"";""0"";""5"";""11"";""0"";""1018"";""0"";""0"";"""""
 "Firenze;2/9/2013;""24"";""18"";""30"";""14"";""54"";""10"";""6"";""15"";""0"";""1020"";""0"";""0"";"""""
 "Firenze;3/9/2013;""25"";""16"";""33"";""13"";""54"";""0"";""6"";""11"";""28"";""1022"";""0"";""0"";"""""

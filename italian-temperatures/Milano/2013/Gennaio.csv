@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Milano;1/1/2013;""1"";""-4"";""4"";""2"";""97"";""2"";""5"";""9"";""0"";""1018"";""0"";""0"";""pioggia nebbia """
 "Milano;2/1/2013;""3"";""2"";""5"";""3"";""97"";""3"";""5"";""11"";""0"";""1022"";""0"";""0"";""pioggia """
 "Milano;3/1/2013;""4"";""-1"";""9"";""3"";""89"";""6"";""6"";""13"";""0"";""1034"";""0"";""0"";""nebbia """

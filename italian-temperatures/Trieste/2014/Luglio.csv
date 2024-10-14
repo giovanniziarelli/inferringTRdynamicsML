@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Trieste;1/7/2014;""21"";""16"";""27"";""13"";""61"";""10"";""7"";""19"";""0"";""1017"";""0"";""0"";""pioggia """
 "Trieste;2/7/2014;""21"";""14"";""26"";""13"";""64"";""10"";""5"";""9"";""0"";""1018"";""0"";""0"";""pioggia """
 "Trieste;3/7/2014;""21"";""15"";""28"";""13"";""63"";""10"";""10"";""57"";""100"";""1023"";""0"";""0"";""pioggia temporale nebbia """

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Napoli;1/9/2020;""22"";""16"";""27"";""14"";""64"";""21"";""7"";""17"";""0"";""1012"";""0"";""0"";"""""
 "Napoli;2/9/2020;""23"";""17"";""27"";""14"";""59"";""19"";""8"";""15"";""0"";""1014"";""0"";""0"";"""""
 "Napoli;3/9/2020;""25"";""21"";""29"";""16"";""59"";""21"";""8"";""21"";""0"";""1019"";""0"";""0"";"""""

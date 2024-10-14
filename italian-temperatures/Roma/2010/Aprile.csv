@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Roma;1/4/2010;""12"";""7"";""18"";""7"";""72"";""10"";""7"";""14"";""0"";""1015"";""0"";""0"";"""""
 "Roma;2/4/2010;""12"";""8"";""16"";""7"";""74"";""10"";""6"";""10"";""0"";""1017"";""0"";""0"";"""""
 "Roma;3/4/2010;""11"";""4"";""16"";""4"";""66"";""10"";""5"";""12"";""0"";""1020"";""0"";""0"";"""""

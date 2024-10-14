@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Roma;1/2/2015;""5"";""0"";""10"";""2"";""79"";""9"";""11"";""22"";""41"";""991"";""0"";""0"";""pioggia temporale nebbia """
 "Roma;2/2/2015;""5"";""2"";""9"";""2"";""76"";""10"";""8"";""15"";""30"";""1000"";""0"";""0"";""pioggia """
 "Roma;3/2/2015;""7"";""2"";""10"";""4"";""82"";""9"";""17"";""32"";""52"";""1001"";""0"";""0"";""pioggia """

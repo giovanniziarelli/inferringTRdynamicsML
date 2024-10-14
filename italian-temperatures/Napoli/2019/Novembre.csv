@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Napoli;1/11/2019;""18"";""15"";""22"";""14"";""80"";""17"";""6"";""11"";""0"";""1014"";""0"";""0"";""pioggia """
 "Napoli;2/11/2019;""18"";""16"";""21"";""15"";""81"";""14"";""9"";""17"";""0"";""1011"";""0"";""0"";""pioggia """
 "Napoli;3/11/2019;""20"";""16"";""21"";""17"";""84"";""13"";""22"";""44"";""0"";""1004"";""0"";""0"";""pioggia temporale """

@@ -14,8 +14,6 @@ def modify_first_row(csv_file, old_w, new_w):
         reader = csv.reader(file)
         rows = list(reader)
         if len(rows) > 0:
-            # Modify the first row here
-            # For example, you can capitalize all column headers
             rows[0] = [cella.replace(old_w, new_w) for cella in rows[0]]
 
     with open(csv_file, 'w', newline='') as file:
@@ -23,7 +21,7 @@ def modify_first_row(csv_file, old_w, new_w):
         writer.writerows(rows)
 
 old_w_s = ['TMAX °C','TMEDIA °C','TMIN °C', 'UMIDITA %'] 
-new_w_s = ['TMAX', 'TMEDIA', 'TMIN', 'UMID']
+new_w_s = ['TMAX', 'TMEAN', 'TMIN', 'HUMID']
 
 for i in range(len(cities)):
     folder_name = cities[i]
@@ -38,7 +36,6 @@ for i in range(len(cities)):
         for k in range(len(old_w_s)):
             old_w = old_w_s[k]
             new_w = new_w_s[k]
-            # Iterate over files in the directory
             for filename in os.listdir(y_folder_name):
                 if filename.endswith('.csv'):
                     csv_file = os.path.join(y_folder_name, filename)

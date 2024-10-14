@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Bari;1/6/2010;""17"";""13"";""21"";""9"";""61"";""15"";""11"";""20"";""33"";""1008"";""0"";""0"";"""""
 "Bari;2/6/2010;""19"";""14"";""24"";""10"";""58"";""10"";""8"";""22"";""0"";""1007"";""0"";""0"";""pioggia """
 "Bari;3/6/2010;""17"";""13"";""21"";""14"";""81"";""11"";""8"";""100"";""0"";""1009"";""0"";""0"";""pioggia """

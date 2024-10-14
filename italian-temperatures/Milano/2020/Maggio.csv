@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Milano;1/5/2020;""16"";""13"";""19"";""12"";""77"";""20"";""5"";""9"";""0"";""1007"";""0"";""0"";""pioggia """
 "Milano;2/5/2020;""19"";""11"";""26"";""8"";""57"";""17"";""10"";""17"";""0"";""1007"";""0"";""0"";""nebbia """
 "Milano;3/5/2020;""20"";""15"";""24"";""8"";""47"";""20"";""12"";""21"";""0"";""1012"";""0"";""0"";"""""

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Napoli;1/10/2015;""19"";""16"";""20"";""13"";""71"";""10"";""13"";""20"";""0"";""1020"";""0"";""0"";""pioggia """
 "Napoli;2/10/2015;""21"";""18"";""24"";""17"";""77"";""10"";""8"";""15"";""0"";""1020"";""0"";""0"";""pioggia temporale """
 "Napoli;3/10/2015;""20"";""16"";""24"";""16"";""77"";""10"";""7"";""15"";""0"";""1023"";""0"";""0"";"""""

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Torino;1/5/2014;""13"";""7"";""21"";""7"";""70"";""14"";""7"";""17"";""0"";""1010"";""0"";""0"";""pioggia temporale """
 "Torino;2/5/2014;""11"";""10"";""13"";""10"";""91"";""9"";""9"";""19"";""0"";""1009"";""0"";""0"";""pioggia temporale """
 "Torino;3/5/2014;""15"";""7"";""23"";""8"";""67"";""13"";""9"";""19"";""0"";""1008"";""0"";""0"";""temporale nebbia """

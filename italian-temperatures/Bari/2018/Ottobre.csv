@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Bari;1/10/2018;""18"";""12"";""24"";""10"";""60"";""21"";""12"";""22"";""0"";""1011"";""0"";""0"";""pioggia """
 "Bari;2/10/2018;""20"";""16"";""22"";""13"";""65"";""22"";""9"";""24"";""0"";""1012"";""0"";""0"";""pioggia """
 "Bari;3/10/2018;""19"";""16"";""22"";""16"";""82"";""16"";""16"";""24"";""0"";""1017"";""0"";""0"";""pioggia """

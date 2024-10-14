@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Catanzaro;1/11/2020;""19"";""17"";""22"";""15"";""77"";""20"";""13"";""21"";""0"";""1023"";""0"";""0"";"""""
 "Catanzaro;2/11/2020;""17"";""13"";""22"";""13"";""78"";""21"";""10"";""22"";""0"";""1024"";""0"";""0"";"""""
 "Catanzaro;3/11/2020;""17"";""12"";""22"";""13"";""77"";""21"";""11"";""24"";""0"";""1023"";""0"";""0"";"""""

@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Roma;1/10/2017;""18"";""14"";""22"";""13"";""72"";""19"";""7"";""11"";""0"";""1019"";""0"";""0"";"""""
 "Roma;2/10/2017;""18"";""15"";""24"";""14"";""75"";""20"";""7"";""13"";""0"";""1021"";""0"";""0"";""pioggia temporale """
 "Roma;3/10/2017;""19"";""14"";""24"";""13"";""70"";""18"";""8"";""13"";""0"";""1021"";""0"";""0"";"""""

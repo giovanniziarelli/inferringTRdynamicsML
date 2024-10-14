@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Ancona;1/7/2020;""29"";""24"";""33"";""19"";""57"";""22"";""10"";""21"";""0"";""1011"";""0"";""0"";"""""
 "Ancona;2/7/2020;""27"";""25"";""29"";""21"";""71"";""21"";""11"";""24"";""0"";""1010"";""0"";""0"";"""""
 "Ancona;3/7/2020;""24"";""20"";""28"";""21"";""80"";""19"";""11"";""22"";""0"";""1011"";""0"";""0"";""pioggia """

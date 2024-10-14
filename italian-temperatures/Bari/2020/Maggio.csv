@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Bari;1/5/2020;""18"";""12"";""22"";""10"";""60"";""20"";""9"";""21"";""0"";""1011"";""0"";""0"";"""""
 "Bari;2/5/2020;""18"";""14"";""22"";""12"";""70"";""19"";""9"";""22"";""0"";""1008"";""0"";""0"";""pioggia temporale """
 "Bari;3/5/2020;""16"";""11"";""21"";""12"";""76"";""20"";""10"";""22"";""0"";""1011"";""0"";""0"";""pioggia """

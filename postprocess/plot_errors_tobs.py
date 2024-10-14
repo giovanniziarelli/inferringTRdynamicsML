@@ -165,9 +165,9 @@ for i in range(2):
         sc = ax[i,j].scatter(delta_testg_mean, delta_testg_true.squeeze(), c = beta_0_testg_mean, cmap = 'Accent', alpha = 0.4)
         ax[i,j].set_title(titles[3*i+j])
         if i == 1:
-            ax[i,j].set_xlabel(r"$\delta_r$")
+            ax[i,j].set_xlabel(r"$\delta$", fontsize=14)
         if j == 0:
-            ax[i,j].set_ylabel(r"$\delta_t$")
+            ax[i,j].set_ylabel(r"$\epsilon$", fontsize=16)
 plt.subplots_adjust(top=0.85, bottom=0.2, wspace=0.3, hspace=0.4)
 cbar_ax = fig_idelta.add_axes([0.2, 0.05, 0.6, 0.03])
 cbar = fig_idelta.colorbar(sc, cax = cbar_ax, orientation = 'horizontal')

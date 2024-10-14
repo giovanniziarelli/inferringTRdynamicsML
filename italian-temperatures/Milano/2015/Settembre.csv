@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Milano;1/9/2015;""25"";""19"";""30"";""15"";""54"";""10"";""6"";""13"";""0"";""1013"";""0"";""0"";""pioggia temporale """
 "Milano;2/9/2015;""24"";""19"";""30"";""17"";""65"";""10"";""6"";""11"";""0"";""1011"";""0"";""0"";""temporale """
 "Milano;3/9/2015;""23"";""18"";""28"";""15"";""62"";""10"";""6"";""13"";""0"";""1011"";""0"";""0"";""pioggia """

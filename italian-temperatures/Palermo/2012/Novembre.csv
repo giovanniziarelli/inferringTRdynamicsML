@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Palermo;1/11/2012;""20"";""19"";""21"";""13"";""66"";""10"";""28"";""46"";""0"";""1005"";""0"";""0"";"""""
 "Palermo;2/11/2012;""20"";""17"";""21"";""13"";""68"";""10"";""25"";""41"";""52"";""1013"";""0"";""0"";"""""
 "Palermo;3/11/2012;""19"";""14"";""22"";""13"";""68"";""10"";""13"";""26"";""0"";""1018"";""0"";""0"";"""""

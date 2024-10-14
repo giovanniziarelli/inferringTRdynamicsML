@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Cagliari;1/6/2014;""19"";""13"";""24"";""14"";""73"";""10"";""12"";""22"";""0"";""1015"";""0"";""0"";"""""
 "Cagliari;2/6/2014;""20"";""12"";""25"";""11"";""58"";""10"";""15"";""26"";""0"";""1014"";""0"";""0"";"""""
 "Cagliari;3/6/2014;""20"";""13"";""26"";""11"";""62"";""10"";""19"";""30"";""50"";""1014"";""0"";""0"";"""""

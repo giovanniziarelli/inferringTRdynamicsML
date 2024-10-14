@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Palermo;1/4/2017;""17"";""12"";""25"";""9"";""59"";""19"";""12"";""31"";""0"";""1017"";""0"";""0"";"""""
 "Palermo;2/4/2017;""14"";""12"";""18"";""10"";""76"";""17"";""20"";""48"";""0"";""1013"";""0"";""0"";""pioggia """
 "Palermo;3/4/2017;""14"";""13"";""16"";""11"";""82"";""14"";""25"";""42"";""0"";""1011"";""0"";""0"";""pioggia """

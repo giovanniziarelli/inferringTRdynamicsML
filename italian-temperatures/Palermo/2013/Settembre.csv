@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Palermo;1/9/2013;""25"";""24"";""26"";""20"";""73"";""10"";""12"";""32"";""0"";""1016"";""0"";""0"";""temporale """
 "Palermo;2/9/2013;""26"";""24"";""28"";""20"";""73"";""10"";""17"";""30"";""0"";""1018"";""0"";""0"";""pioggia """
 "Palermo;3/9/2013;""26"";""24"";""28"";""20"";""69"";""10"";""25"";""35"";""0"";""1020"";""0"";""0"";"""""

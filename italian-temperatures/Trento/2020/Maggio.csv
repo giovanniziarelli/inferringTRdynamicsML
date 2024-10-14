@@ -1,4 +1,4 @@
-LOCALITA;DATA;TMEDIA;TMIN;TMAX;PUNTORUGIADA °C;UMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
+LOCALITA;DATA;TMEAN;TMIN;TMAX;PUNTORUGIADA °C;HUMID;VISIBILITA km;VENTOMEDIA km/h;VENTOMAX km/h;RAFFICA km/h;PRESSIONESLM mb;PRESSIONEMEDIA mb;PIOGGIA mm;FENOMENI
 "Trento;1/5/2020;""16"";""9"";""20"";""8"";""61"";""22"";""7"";""18"";""0"";""1006"";""0"";""0"";"""""
 "Trento;2/5/2020;""19"";""9"";""24"";""6"";""47"";""20"";""6"";""18"";""0"";""1007"";""0"";""0"";"""""
 "Trento;3/5/2020;""19"";""13"";""24"";""3"";""24"";""18"";""8"";""11"";""0"";""1014"";""0"";""0"";"""""
