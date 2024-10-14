@@ -100,7 +100,6 @@ class OptimizationProblem():
                 tol = 1e-100,
                 options = options,
                 callback = callback)
-        #print(result)
     
     def optimize_basinhopping(self, num_epochs):
         options = {'maxiter': num_epochs, 'gtol': 1e-100}
